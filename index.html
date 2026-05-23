@@ -320,6 +320,70 @@
       opacity: 0.75;
     }
 
+    /* ── NEXO FEATURED CARD ── */
+    .service-card.nexo-card {
+      grid-column: 1 / -1;
+      opacity: 1;
+      border-color: rgba(232,197,71,0.2);
+      background: linear-gradient(135deg, rgba(232,197,71,0.05) 0%, var(--bg2) 55%);
+    }
+
+    .nexo-inner {
+      display: flex;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .nexo-left { flex: 1; }
+
+    .service-tag.nexo-tag {
+      background: rgba(232,197,71,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(232,197,71,0.3);
+    }
+
+    .nexo-modules {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex-shrink: 0;
+      width: 300px;
+    }
+
+    .nexo-module {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: border-color 0.2s;
+    }
+
+    .nexo-module:hover { border-color: rgba(232,197,71,0.3); }
+
+    .nexo-cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #0c0c0c;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: all 0.2s;
+    }
+
+    .nexo-cta:hover { background: #f0d468; transform: translateY(-2px); }
+
+    @media (max-width: 860px) {
+      .nexo-inner { flex-direction: column; gap: 28px; }
+      .nexo-modules { width: 100%; grid-template-columns: 1fr 1fr; }
+    }
+
     .service-icon {
       font-size: 32px;
       margin-bottom: 20px;
@@ -606,13 +670,24 @@
           </p>
         </div>
 
-        <div class="service-card coming-soon fade-in">
-          <span class="service-icon">🔗</span>
-          <span class="service-tag soon">Próximamente</span>
-          <div class="service-name">Nexo — Sistema Integral</div>
-          <p class="service-desc">
-            Un sistema completo para gestionar tu vida personal y tu negocio desde un solo lugar. Finanzas, proyectos, hábitos y más. En desarrollo — pronto disponible.
-          </p>
+        <div class="service-card nexo-card fade-in">
+          <div class="nexo-inner">
+            <div class="nexo-left">
+              <span class="service-icon">🔗</span>
+              <span class="service-tag nexo-tag">Beta gratuita disponible</span>
+              <div class="service-name">NEXO — Sistema Integral</div>
+              <p class="service-desc">
+                Un sistema completo para gestionar tu vida personal y tu negocio desde un solo lugar. En español, sin complicaciones, diseñado para emprendedores latinoamericanos que quieren claridad y resultados.
+              </p>
+              <a href="https://nexo.gastonpetruzzellis.com" target="_blank" rel="noopener" class="nexo-cta">Probalo gratis →</a>
+            </div>
+            <div class="nexo-modules">
+              <div class="nexo-module">💰 Finanzas</div>
+              <div class="nexo-module">📋 Proyectos & Tareas</div>
+              <div class="nexo-module">🔁 Hábitos & Rutinas</div>
+              <div class="nexo-module">🤝 Clientes & CRM</div>
+            </div>
+          </div>
         </div>
 
       </div>
