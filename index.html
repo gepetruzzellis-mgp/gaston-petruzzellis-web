@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gastón Petruzzellis</title>
-  <meta name="description" content="Ayudo a personas y pequeñas empresas a ordenar su vida y su negocio con sistemas simples y automatizados." />
+  <title>Gastón Petruzzellis — Logística, Sistemas & NEXO</title>
+  <meta name="description" content="Consultor en Logística, Supply Chain y creador de NEXO. Casos reales, soluciones concretas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,6 +21,8 @@
       --accent: #e8c547;
       --accent2: #c9a82c;
       --radius: 16px;
+      --green: #4ade80;
+      --red: #f87171;
     }
 
     html { scroll-behavior: smooth; }
@@ -44,7 +46,7 @@
       align-items: center;
       padding: 20px 48px;
       backdrop-filter: blur(20px);
-      background: rgba(12,12,12,0.8);
+      background: rgba(12,12,12,0.85);
       border-bottom: 1px solid var(--border);
     }
 
@@ -55,7 +57,6 @@
       color: var(--text);
       text-decoration: none;
     }
-
     .nav-logo span { color: var(--accent); }
 
     .nav-links {
@@ -63,7 +64,6 @@
       gap: 32px;
       list-style: none;
     }
-
     .nav-links a {
       color: var(--muted);
       text-decoration: none;
@@ -71,8 +71,47 @@
       font-weight: 400;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent);
+      color: #0c0c0c;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent2); }
+
+    /* ── SHARED ── */
+    section { padding: 100px 48px; }
+    .section-inner { max-width: 1160px; margin: 0 auto; }
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 580px;
+    }
 
     /* ── HERO ── */
     #hero {
@@ -81,7 +120,7 @@
       align-items: center;
       justify-content: center;
       padding: 120px 48px 80px;
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
@@ -108,7 +147,6 @@
       border-radius: 100px;
       margin-bottom: 32px;
     }
-
     .hero-badge::before {
       content: '';
       width: 6px; height: 6px;
@@ -116,29 +154,25 @@
       background: var(--accent);
       animation: pulse 2s infinite;
     }
-
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.3; }
     }
 
     .hero-title {
-      font-size: clamp(42px, 6vw, 72px);
+      font-size: clamp(42px, 6vw, 76px);
       font-weight: 800;
       line-height: 1.05;
       letter-spacing: -0.03em;
       margin-bottom: 24px;
     }
-
-    .hero-title .highlight {
-      color: var(--accent);
-    }
+    .hero-title .highlight { color: var(--accent); }
 
     .hero-subtitle {
       font-size: 18px;
       color: var(--muted);
       max-width: 560px;
-      line-height: 1.7;
+      line-height: 1.75;
       margin-bottom: 48px;
     }
 
@@ -146,6 +180,7 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .btn-primary {
@@ -160,13 +195,8 @@
       border-radius: 100px;
       text-decoration: none;
       transition: all 0.2s;
-      letter-spacing: 0.01em;
     }
-
-    .btn-primary:hover {
-      background: var(--accent2);
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
 
     .btn-secondary {
       display: inline-flex;
@@ -182,110 +212,569 @@
       border: 1px solid var(--border);
       transition: all 0.2s;
     }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
 
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.04);
-    }
-
-
-    /* ── SECTION SHARED ── */
-    section { padding: 100px 48px; }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-
-    /* ── ABOUT ── */
-    #sobre-mi {
-      background: var(--bg2);
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 72px;
+      padding-top: 40px;
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+    .hero-stat-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.03em;
     }
-
-    .about-text p {
+    .hero-stat-label {
+      font-size: 13px;
       color: var(--muted);
-      font-size: 17px;
-      line-height: 1.8;
-      margin-bottom: 20px;
+      margin-top: 2px;
     }
 
-    .about-text p strong {
-      color: var(--text);
-      font-weight: 600;
+    /* ── CASOS / PORTFOLIO ── */
+    #casos { background: var(--bg2); border-top: 1px solid var(--border); }
+
+    .casos-header {
+      margin-bottom: 60px;
     }
 
-    .about-stats {
+    .casos-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .stat-card {
+    .caso-card {
       background: var(--bg3);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px 24px;
-      transition: border-color 0.2s;
+      padding: 36px 32px;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
     }
+    .caso-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .caso-card:hover { border-color: rgba(232,197,71,0.2); transform: translateY(-4px); }
+    .caso-card:hover::after { opacity: 1; }
 
-    .stat-card:hover { border-color: rgba(232,197,71,0.2); }
-
-    .stat-number {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+    .caso-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(232,197,71,0.08);
       color: var(--accent);
-      line-height: 1;
-      margin-bottom: 6px;
+      border: 1px solid rgba(232,197,71,0.2);
+      margin-bottom: 20px;
     }
 
-    .stat-label {
-      font-size: 13px;
+    .caso-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .caso-empresa {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--muted);
-      font-weight: 400;
-      line-height: 1.4;
+      margin-bottom: 8px;
     }
 
-    /* ── SERVICES ── */
-    #servicios { background: var(--bg); }
+    .caso-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .caso-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .caso-results {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .caso-result {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .caso-result-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(74,222,128,0.12);
+      border: 1px solid rgba(74,222,128,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    /* ── NEXO SHOWCASE ── */
+    #nexo { background: var(--bg); border-top: 1px solid var(--border); }
+
+    .nexo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .nexo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(232,197,71,0.1);
+      border: 1px solid rgba(232,197,71,0.25);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .nexo-cta-wrap {
+      flex-shrink: 0;
+    }
+
+    /* MOCKUP: App Window */
+    .app-window {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+    }
+
+    .app-titlebar {
+      background: #1a1a1a;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .app-dot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+    }
+    .app-dot.red { background: #ff5f56; }
+    .app-dot.yellow { background: #ffbd2e; }
+    .app-dot.green { background: #27c93f; }
+    .app-url {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .app-body {
+      display: flex;
+      min-height: 400px;
+    }
+
+    /* Sidebar mockup */
+    .mock-sidebar {
+      width: 200px;
+      background: #0f0f0f;
+      border-right: 1px solid rgba(255,255,255,0.05);
+      padding: 20px 12px;
+      flex-shrink: 0;
+    }
+    .mock-sidebar-logo {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--accent);
+      padding: 0 8px;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .mock-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .mock-nav-item.active {
+      background: rgba(232,197,71,0.1);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .mock-nav-item.section-header {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.2);
+      margin-top: 14px;
+      margin-bottom: 4px;
+      padding-bottom: 0;
+    }
+
+    /* Main content mockup */
+    .mock-main {
+      flex: 1;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .mock-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .mock-page-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .mock-btn {
+      background: var(--accent);
+      color: #0c0c0c;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 6px;
+    }
+
+    /* Dashboard cards */
+    .mock-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .mock-card {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .mock-card-label {
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .mock-card-value {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .mock-card-value.green { color: var(--green); }
+    .mock-card-value.accent { color: var(--accent); }
+    .mock-card-sub {
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+    }
+
+    /* Chart bars */
+    .mock-chart-area {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .mock-chart-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .mock-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 80px;
+    }
+    .mock-bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      justify-content: flex-end;
+    }
+    .mock-bar {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      background: rgba(232,197,71,0.3);
+      transition: height 0.3s;
+    }
+    .mock-bar.highlight { background: var(--accent); }
+    .mock-bar-label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* Horizontal bars */
+    .mock-hbars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mock-hbar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mock-hbar-name {
+      font-size: 11px;
+      color: var(--muted);
+      width: 100px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mock-hbar-track {
+      flex: 1;
+      height: 8px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mock-hbar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--accent);
+    }
+    .mock-hbar-val {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+      width: 40px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Presupuesto mockup */
+    .mock-budget {
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .mock-budget-header {
+      background: rgba(232,197,71,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .mock-budget-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .mock-budget-num {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .mock-budget-row {
+      display: grid;
+      grid-template-columns: 1fr 60px 80px 90px;
+      padding: 11px 18px;
+      font-size: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      gap: 8px;
+    }
+    .mock-budget-row.head {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .mock-budget-row.total {
+      background: rgba(232,197,71,0.05);
+      font-weight: 700;
+    }
+    .mock-budget-row span:not(:first-child) { text-align: right; }
+    .mock-budget-row span.accent { color: var(--accent); }
+    .mock-pdf-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 12px 18px;
+    }
+    .mock-pdf-pill {
+      background: var(--accent);
+      color: #0c0c0c;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 6px;
+    }
+
+    /* Showcase grid */
+    .nexo-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .nexo-feature-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .nexo-feature-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    /* ── TESTIMONIALES ── */
+    #testimoniales {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    .testi-header {
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 60px;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testi-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color 0.2s;
+      position: relative;
+    }
+    .testi-card:hover { border-color: rgba(232,197,71,0.2); }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 18px;
+    }
+    .testi-star { color: var(--accent); font-size: 14px; }
+
+    .testi-quote {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testi-quote::before { content: '"'; color: var(--accent); font-style: normal; font-size: 20px; line-height: 0; vertical-align: -4px; margin-right: 2px; }
+    .testi-quote::after { content: '"'; color: var(--accent); font-style: normal; font-size: 20px; line-height: 0; vertical-align: -4px; margin-left: 2px; }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testi-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #0c0c0c;
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .testi-role {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .testi-product {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: rgba(232,197,71,0.08);
+      border: 1px solid rgba(232,197,71,0.2);
+      border-radius: 100px;
+      padding: 3px 8px;
+    }
+
+    /* ── SERVICIOS ── */
+    #servicios { background: var(--bg); border-top: 1px solid var(--border); }
 
     .services-header {
       text-align: center;
       max-width: 600px;
-      margin: 0 auto 64px;
-    }
-
-    .services-header .section-title { margin-bottom: 16px; }
-
-    .services-header p {
-      color: var(--muted);
-      font-size: 17px;
+      margin: 0 auto 60px;
     }
 
     .services-grid {
@@ -298,136 +787,16 @@
       background: var(--bg2);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 36px 32px;
+      padding: 32px 28px;
       transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
     }
+    .service-card:hover { border-color: rgba(232,197,71,0.25); transform: translateY(-3px); }
 
-    .service-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(232,197,71,0.04) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-    }
+    .service-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+    .service-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .service-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-    .service-card:hover { border-color: rgba(232,197,71,0.25); transform: translateY(-4px); }
-    .service-card:hover::before { opacity: 1; }
-
-    .service-card.coming-soon {
-      opacity: 0.75;
-    }
-
-    /* ── NEXO FEATURED CARD ── */
-    .service-card.nexo-card {
-      grid-column: 1 / -1;
-      opacity: 1;
-      border-color: rgba(232,197,71,0.2);
-      background: linear-gradient(135deg, rgba(232,197,71,0.05) 0%, var(--bg2) 55%);
-    }
-
-    .nexo-inner {
-      display: flex;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .nexo-left { flex: 1; }
-
-    .service-tag.nexo-tag {
-      background: rgba(232,197,71,0.15);
-      color: var(--accent);
-      border: 1px solid rgba(232,197,71,0.3);
-    }
-
-    .nexo-modules {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      flex-shrink: 0;
-      width: 300px;
-    }
-
-    .nexo-module {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      transition: border-color 0.2s;
-    }
-
-    .nexo-module:hover { border-color: rgba(232,197,71,0.3); }
-
-    .nexo-cta {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 12px 24px;
-      background: var(--accent);
-      color: #0c0c0c;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: -0.01em;
-      transition: all 0.2s;
-    }
-
-    .nexo-cta:hover { background: #f0d468; transform: translateY(-2px); }
-
-    @media (max-width: 860px) {
-      .nexo-inner { flex-direction: column; gap: 28px; }
-      .nexo-modules { width: 100%; grid-template-columns: 1fr 1fr; }
-    }
-
-    .service-icon {
-      font-size: 32px;
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .service-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 100px;
-      margin-bottom: 16px;
-    }
-
-    .service-tag.available {
-      background: rgba(232,197,71,0.1);
-      color: var(--accent);
-      border: 1px solid rgba(232,197,71,0.2);
-    }
-
-    .service-tag.soon {
-      background: rgba(255,255,255,0.05);
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-
-    .service-name {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .service-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* ── CONTACT / SOCIAL ── */
+    /* ── CONTACTO ── */
     #contacto {
       background: var(--bg2);
       border-top: 1px solid var(--border);
@@ -438,9 +807,7 @@
       margin: 0 auto;
       text-align: center;
     }
-
     .contact-inner .section-title { margin-bottom: 16px; }
-
     .contact-inner > p {
       color: var(--muted);
       font-size: 17px;
@@ -469,30 +836,16 @@
       transition: all 0.2s;
       background: var(--bg3);
     }
-
     .social-link:hover {
       border-color: rgba(232,197,71,0.3);
       background: rgba(232,197,71,0.06);
       color: var(--accent);
       transform: translateY(-2px);
     }
+    .social-link svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-    .social-link svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
-    .contact-email {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .contact-email a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    .contact-email { font-size: 14px; color: var(--muted); }
+    .contact-email a { color: var(--accent); text-decoration: none; }
     .contact-email a:hover { text-decoration: underline; }
 
     /* ── FOOTER ── */
@@ -502,57 +855,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 100%;
     }
-
-    footer p {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
+    footer p { font-size: 13px; color: var(--muted); }
     footer span { color: var(--accent); }
-
-    /* ── DIVIDER ── */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* ── SCROLL INDICATOR ── */
-    .scroll-hint {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 64px;
-      letter-spacing: 0.05em;
-    }
-
-    .scroll-hint-line {
-      width: 32px;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 18px 24px; }
-      .nav-links { display: none; }
-      #hero { padding: 100px 24px 60px; }
-      section { padding: 70px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .services-grid { grid-template-columns: 1fr; }
-      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
-    }
-
-    @media (max-width: 600px) {
-      .about-stats { grid-template-columns: 1fr 1fr; }
-      .hero-cta { flex-direction: column; }
-      .btn-primary, .btn-secondary { justify-content: center; }
-    }
 
     /* ── FADE IN ── */
     .fade-in {
@@ -560,10 +865,30 @@
       transform: translateY(24px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
+    .fade-in.visible { opacity: 1; transform: none; }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; }
+      section { padding: 70px 24px; }
+      .casos-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .nexo-showcase-grid { grid-template-columns: 1fr; }
+      .nexo-header { flex-direction: column; align-items: flex-start; }
+      .mock-sidebar { display: none; }
+      .mock-cards { grid-template-columns: 1fr 1fr; }
+      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-cta { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; }
+      .mock-cards { grid-template-columns: 1fr 1fr; }
+      .nav-cta { display: none; }
     }
   </style>
 </head>
@@ -573,10 +898,12 @@
   <nav>
     <a class="nav-logo" href="#hero">Gastón<span>.</span></a>
     <ul class="nav-links">
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="#nexo">NEXO</a></li>
+      <li><a href="#testimoniales">Reviews</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
+    <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" class="nav-cta">Conseguí NEXO →</a>
   </nav>
 
   <!-- HERO -->
@@ -584,60 +911,479 @@
     <div class="hero-content">
       <div class="hero-badge">Disponible para proyectos</div>
       <h1 class="hero-title">
-        Gastón<br />
-        <span class="highlight">Petruzzellis</span>
+        Logística, sistemas<br />y <span class="highlight">resultados reales</span>
       </h1>
       <p class="hero-subtitle">
-        Consultor en Logística, Supply Chain y Gestión de Negocios. Ayudo a PyMEs, comercios y emprendedores a ordenar sus procesos, controlar su stock y automatizar sus operaciones para ganar tiempo y rentabilidad.
+        Soy Gastón Petruzzellis. Ayudo a PyMEs y emprendedores a ordenar sus operaciones, controlar su stock y tomar mejores decisiones. También creé NEXO — la app todo-en-uno para gestionar tu negocio y tu vida.
       </p>
       <div class="hero-cta">
-        <a href="#servicios" class="btn-primary">Ver qué hago →</a>
-        <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="btn-secondary">Hablemos</a>
+        <a href="#casos" class="btn-primary">Ver casos de impacto →</a>
+        <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" class="btn-secondary">Conocer NEXO</a>
       </div>
-      <div class="scroll-hint">
-        <div class="scroll-hint-line"></div>
-        Scroll para explorar
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">+5</div>
+          <div class="hero-stat-label">años en logística y supply chain</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">+30</div>
+          <div class="hero-stat-label">negocios asesorados</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">1</div>
+          <div class="hero-stat-label">app propia en producción</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">$0</div>
+          <div class="hero-stat-label">en suscripciones con NEXO</div>
+        </div>
       </div>
     </div>
-
   </section>
 
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi">
+  <!-- CASOS DE IMPACTO -->
+  <section id="casos">
     <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-text fade-in">
-          <div class="section-label">Sobre mí</div>
-          <h2 class="section-title">El orden transforma negocios y vidas.</h2>
-          <p>
-            Soy <strong>Gastón Petruzzellis</strong>, Licenciado en Logística y Supply Chain con diplomatura en Inteligencia Artificial. Trabajo en el cruce entre la organización, la automatización y el mundo digital, diseñando sistemas que le quitan el caos a los emprendedores y les devuelven tiempo y claridad.
+      <div class="casos-header fade-in">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Casos de impacto real</h2>
+        <p class="section-sub">Problemas concretos, soluciones específicas, resultados medibles.</p>
+      </div>
+
+      <div class="casos-grid">
+
+        <div class="caso-card fade-in">
+          <span class="caso-icon">🔩</span>
+          <span class="caso-tag">Gestión de Inventario</span>
+          <div class="caso-empresa">Ferretería — Córdoba</div>
+          <div class="caso-title">De 0 a control total del stock en 3 semanas</div>
+          <p class="caso-desc">
+            Una ferretería familiar con más de 600 SKUs manejaba el stock "de memoria" y con una libreta en papel. Constantemente tenían quiebres en los productos que más rotaban y sobrestock en los que casi no se vendían.
           </p>
-          <p>
-            Mi formación en logística me enseñó algo que pocos entienden: los procesos importan tanto como los resultados. Con el tiempo descubrí que la mayoría de los problemas de los pequeños negocios no son de talento ni de recursos. <strong>Son de orden.</strong>
+          <p class="caso-desc">
+            Implementamos un sistema de control de inventario en Google Sheets con categorías, stock mínimo configurable y reportes automáticos semanales.
           </p>
-          <p>
-            Por eso creo sistemas: simples de entender, automáticos en su funcionamiento, y pensados para que cualquier persona pueda usarlos sin necesitar ser técnica.
-          </p>
+          <div class="caso-results">
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Quiebres de stock reducidos un 68%
+            </div>
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Tiempo de conteo semanal: de 4 hs a 45 min
+            </div>
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Pedidos a proveedores basados en datos reales
+            </div>
+          </div>
         </div>
 
-        <div class="about-stats fade-in">
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Sistemas diseñados a medida de cada cliente</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">+5</div>
-            <div class="stat-label">Años trabajando con datos y automatización</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">0</div>
-            <div class="stat-label">Complicaciones innecesarias. Simple funciona.</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Horas ahorradas con los sistemas que diseñamos</div>
+        <div class="caso-card fade-in">
+          <span class="caso-icon">👗</span>
+          <span class="caso-tag">Planeamiento de Demanda</span>
+          <div class="caso-empresa">Emprendimiento textil — Buenos Aires</div>
+          <div class="caso-title">Comprar lo que se vende, no lo que parece que se vende</div>
+          <p class="caso-desc">
+            Una emprendedora de ropa compraba al inicio de cada temporada basándose en intuición. Terminaba con mucho stock de tallas que no rotaban y sin stock de las que sí se vendían.
+          </p>
+          <p class="caso-desc">
+            Analizamos 18 meses de ventas históricas y construimos un modelo simple de planeamiento por talla, color y temporada con proyección de demanda.
+          </p>
+          <div class="caso-results">
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Inversión en compras reducida un 22%
+            </div>
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Stock sin rotar al final de temporada: -70%
+            </div>
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Margen bruto mejorado 14 puntos porcentuales
+            </div>
           </div>
         </div>
+
+        <div class="caso-card fade-in">
+          <span class="caso-icon">🚚</span>
+          <span class="caso-tag">Logística & Procesos</span>
+          <div class="caso-empresa">Distribuidora de alimentos — GBA</div>
+          <div class="caso-title">Rutas optimizadas y entregas sin errores</div>
+          <p class="caso-desc">
+            Una distribuidora con 8 camiones hacía el armado de rutas manualmente todos los días. Los repartidores llegaban tarde, se duplicaban visitas y los pedidos a veces se perdían entre hojas de papel.
+          </p>
+          <p class="caso-desc">
+            Reorganizamos el flujo de pedidos, implementamos un tablero digital de rutas por zona y automatizamos los remitos y el cierre de caja diario.
+          </p>
+          <div class="caso-results">
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Tiempo de armado de rutas: de 2 hs a 20 min
+            </div>
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Errores en pedidos: casi cero
+            </div>
+            <div class="caso-result">
+              <div class="caso-result-icon">✓</div>
+              Cierre de caja diario automatizado
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXO SHOWCASE -->
+  <section id="nexo">
+    <div class="section-inner">
+
+      <div class="nexo-header fade-in">
+        <div>
+          <div class="nexo-badge">🔗 Producto propio</div>
+          <h2 class="section-title">NEXO — Tu vida y tu negocio<br />en un solo lugar</h2>
+          <p class="section-sub">La app todo-en-uno que armé porque no existía. Finanzas, stock, ventas, análisis, hábitos y mucho más. Un único pago, acceso de por vida.</p>
+        </div>
+        <div class="nexo-cta-wrap">
+          <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" class="btn-primary">Conseguir NEXO — $39.900 →</a>
+        </div>
+      </div>
+
+      <!-- MOCKUP 1: Dashboard con análisis -->
+      <div class="fade-in" style="margin-bottom: 48px;">
+        <div class="nexo-feature-label">📊 Análisis de demanda</div>
+        <p class="nexo-feature-desc">Visualizá qué productos vendés más, cómo evoluciona tu facturación semana a semana y en qué días concentrás más ventas. Todo calculado automáticamente de tus datos reales.</p>
+        <div class="app-window">
+          <div class="app-titlebar">
+            <div class="app-dot red"></div>
+            <div class="app-dot yellow"></div>
+            <div class="app-dot green"></div>
+            <div class="app-url">nexo.gastonpetruzzellis.com/negocio/analisis</div>
+          </div>
+          <div class="app-body">
+            <div class="mock-sidebar">
+              <div class="mock-sidebar-logo">NEXO</div>
+              <div class="mock-nav-item">🏠 Dashboard</div>
+              <div class="mock-nav-item">💰 Finanzas</div>
+              <div class="mock-nav-item">📋 Proyectos</div>
+              <div class="mock-nav-item">🔁 Hábitos</div>
+              <div class="mock-nav-item section-header">Mi Negocio</div>
+              <div class="mock-nav-item">📦 Productos</div>
+              <div class="mock-nav-item">🛒 Ventas</div>
+              <div class="mock-nav-item active">📊 Análisis</div>
+              <div class="mock-nav-item">💡 Sugerencias</div>
+            </div>
+            <div class="mock-main">
+              <div class="mock-header-row">
+                <div class="mock-page-title">Análisis de demanda</div>
+              </div>
+              <div class="mock-cards" style="grid-template-columns: repeat(4,1fr); margin-bottom: 16px;">
+                <div class="mock-card">
+                  <div class="mock-card-label">Total este mes</div>
+                  <div class="mock-card-value accent">$284.500</div>
+                  <div class="mock-card-sub">↑ 12% vs mes anterior</div>
+                </div>
+                <div class="mock-card">
+                  <div class="mock-card-label">Transacciones</div>
+                  <div class="mock-card-value">143</div>
+                  <div class="mock-card-sub">este mes</div>
+                </div>
+                <div class="mock-card">
+                  <div class="mock-card-label">Producto estrella</div>
+                  <div class="mock-card-value" style="font-size:13px; padding-top:4px;">Gaseosa 2.5L</div>
+                  <div class="mock-card-sub">48 unidades</div>
+                </div>
+                <div class="mock-card">
+                  <div class="mock-card-label">Mejor día</div>
+                  <div class="mock-card-value green">Viernes</div>
+                  <div class="mock-card-sub">+31% del promedio</div>
+                </div>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="mock-chart-area">
+                  <div class="mock-chart-title">Productos más vendidos</div>
+                  <div class="mock-hbars">
+                    <div class="mock-hbar-row">
+                      <div class="mock-hbar-name">Gaseosa 2.5L</div>
+                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:90%"></div></div>
+                      <div class="mock-hbar-val">48u</div>
+                    </div>
+                    <div class="mock-hbar-row">
+                      <div class="mock-hbar-name">Agua mineral</div>
+                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:65%"></div></div>
+                      <div class="mock-hbar-val">35u</div>
+                    </div>
+                    <div class="mock-hbar-row">
+                      <div class="mock-hbar-name">Snacks mix</div>
+                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:48%"></div></div>
+                      <div class="mock-hbar-val">26u</div>
+                    </div>
+                    <div class="mock-hbar-row">
+                      <div class="mock-hbar-name">Jugo botella</div>
+                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:30%"></div></div>
+                      <div class="mock-hbar-val">16u</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-chart-area">
+                  <div class="mock-chart-title">Ventas por semana</div>
+                  <div class="mock-bars">
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar" style="height:40%"></div>
+                      <div class="mock-bar-label">S1</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar" style="height:55%"></div>
+                      <div class="mock-bar-label">S2</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar" style="height:45%"></div>
+                      <div class="mock-bar-label">S3</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar" style="height:70%"></div>
+                      <div class="mock-bar-label">S4</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar highlight" style="height:100%"></div>
+                      <div class="mock-bar-label">S5</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar" style="height:85%"></div>
+                      <div class="mock-bar-label">S6</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar" style="height:60%"></div>
+                      <div class="mock-bar-label">S7</div>
+                    </div>
+                    <div class="mock-bar-wrap">
+                      <div class="mock-bar highlight" style="height:95%"></div>
+                      <div class="mock-bar-label">S8</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOCKUP 2: Presupuestos -->
+      <div class="nexo-showcase-grid fade-in">
+        <div>
+          <div class="nexo-feature-label">🧾 Presupuestos con PDF</div>
+          <p class="nexo-feature-desc">Armás un presupuesto con todos los ítems, precios y datos del cliente. En un click lo descargás como PDF listo para enviar. Sin Word, sin Canva, sin nada extra.</p>
+          <div class="app-window">
+            <div class="app-titlebar">
+              <div class="app-dot red"></div>
+              <div class="app-dot yellow"></div>
+              <div class="app-dot green"></div>
+              <div class="app-url">…/herramientas/presupuestos</div>
+            </div>
+            <div style="padding: 20px;">
+              <div class="mock-header-row">
+                <div class="mock-page-title">Presupuesto #0042</div>
+                <div style="font-size: 11px; color: var(--muted);">Cliente: María González</div>
+              </div>
+              <div class="mock-budget">
+                <div class="mock-budget-header">
+                  <div class="mock-budget-title">Servicio de diseño y entrega</div>
+                  <div class="mock-budget-num">Válido 15 días</div>
+                </div>
+                <div class="mock-budget-row head">
+                  <span>Descripción</span>
+                  <span style="text-align:right">Cant.</span>
+                  <span style="text-align:right">P. Unit.</span>
+                  <span style="text-align:right">Total</span>
+                </div>
+                <div class="mock-budget-row">
+                  <span>Diseño de piezas</span>
+                  <span>3</span>
+                  <span>$8.500</span>
+                  <span>$25.500</span>
+                </div>
+                <div class="mock-budget-row">
+                  <span>Entrega a domicilio</span>
+                  <span>1</span>
+                  <span>$3.000</span>
+                  <span>$3.000</span>
+                </div>
+                <div class="mock-budget-row">
+                  <span>Urgencia (48hs)</span>
+                  <span>1</span>
+                  <span>$4.000</span>
+                  <span>$4.000</span>
+                </div>
+                <div class="mock-budget-row total">
+                  <span>TOTAL</span>
+                  <span></span>
+                  <span></span>
+                  <span class="accent">$32.500</span>
+                </div>
+                <div class="mock-pdf-btn">
+                  <div class="mock-pdf-pill">⬇ Descargar PDF</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="nexo-feature-label">📦 Control de stock en tiempo real</div>
+          <p class="nexo-feature-desc">Cada venta registrada descuenta el stock automáticamente. Recibís alertas cuando un producto llega al mínimo. Sugerencias inteligentes de qué reponer y cuándo.</p>
+          <div class="app-window">
+            <div class="app-titlebar">
+              <div class="app-dot red"></div>
+              <div class="app-dot yellow"></div>
+              <div class="app-dot green"></div>
+              <div class="app-url">…/negocio/productos</div>
+            </div>
+            <div style="padding: 20px;">
+              <div class="mock-header-row">
+                <div class="mock-page-title">Mis productos</div>
+                <div class="mock-btn">+ Agregar</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; padding: 8px 12px; font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">
+                  <span>Producto</span><span style="text-align:center">Stock</span><span style="text-align:center">Mínimo</span><span style="text-align:right">Precio</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
+                  <span>Gaseosa 2.5L</span>
+                  <span style="text-align:center; color: var(--green); font-weight:700">42 u</span>
+                  <span style="text-align:center; color: var(--muted)">10</span>
+                  <span style="text-align:right; font-weight:600">$890</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.2); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
+                  <span>⚠️ Agua mineral</span>
+                  <span style="text-align:center; color: var(--red); font-weight:700">3 u</span>
+                  <span style="text-align:center; color: var(--muted)">15</span>
+                  <span style="text-align:right; font-weight:600">$650</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
+                  <span>Snacks mix</span>
+                  <span style="text-align:center; color: var(--green); font-weight:700">28 u</span>
+                  <span style="text-align:center; color: var(--muted)">8</span>
+                  <span style="text-align:right; font-weight:600">$420</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.2); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
+                  <span>⚠️ Jugo botella</span>
+                  <span style="text-align:center; color: var(--red); font-weight:700">2 u</span>
+                  <span style="text-align:center; color: var(--muted)">12</span>
+                  <span style="text-align:right; font-weight:600">$750</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALES -->
+  <section id="testimoniales">
+    <div class="section-inner">
+      <div class="testi-header fade-in">
+        <div class="section-label">Lo que dicen</div>
+        <h2 class="section-title">Resultados que hablan solos</h2>
+        <p class="section-sub" style="margin: 0 auto;">Personas reales usando NEXO y los servicios de consultoría.</p>
+      </div>
+
+      <div class="testi-grid">
+
+        <div class="testi-card fade-in">
+          <div class="testi-product">NEXO</div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <p class="testi-quote">Antes cerraba el mes sin saber exactamente cuánto había ganado. Con NEXO lo veo en tiempo real, separado de mis finanzas personales. Es lo que me faltaba.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RM</div>
+            <div>
+              <div class="testi-name">Rodrigo M.</div>
+              <div class="testi-role">Comerciante, Mendoza</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-product">NEXO</div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <p class="testi-quote">El módulo de sugerencias me avisó que tenía stock crítico antes de que me quedara sin el producto que más vendo. Me salvó una semana entera de ventas perdidas.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">VS</div>
+            <div>
+              <div class="testi-name">Valentina S.</div>
+              <div class="testi-role">Emprendedora, Buenos Aires</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-product">NEXO</div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <p class="testi-quote">Armo presupuestos con PDF en 2 minutos. Antes me llevaba media hora en Word y quedaban con un diseño horrible. Ahora los mando con confianza.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LT</div>
+            <div>
+              <div class="testi-name">Lucas T.</div>
+              <div class="testi-role">Técnico en electrónica, Córdoba</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-product">Consultoría</div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <p class="testi-quote">En menos de un mes ordenamos el inventario de toda la ferretería. Gastón entiende rápido cómo funciona el negocio y propone soluciones que realmente se pueden implementar.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">FP</div>
+            <div>
+              <div class="testi-name">Federico P.</div>
+              <div class="testi-role">Ferretería familiar, Córdoba</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-product">NEXO</div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <p class="testi-quote">Uso NEXO para los hábitos, los proyectos y el negocio al mismo tiempo. Es la primera app que realmente combina todo sin que se sienta sobrecargada. Muy intuitiva.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MC</div>
+            <div>
+              <div class="testi-name">Martina C.</div>
+              <div class="testi-role">Emprendedora textil, Rosario</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card fade-in">
+          <div class="testi-product">Consultoría</div>
+          <div class="testi-stars">
+            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
+          </div>
+          <p class="testi-quote">El análisis de demanda que hicimos cambió cómo compro cada temporada. Dejé de gastar en lo que no se vende y ahora tengo stock justo de lo que sí se vende.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AG</div>
+            <div>
+              <div class="testi-name">Ana G.</div>
+              <div class="testi-role">Negocio de indumentaria, La Plata</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -646,71 +1392,41 @@
   <section id="servicios">
     <div class="section-inner">
       <div class="services-header fade-in">
-        <div class="section-label">Lo que hago</div>
-        <h2 class="section-title">Soluciones reales para negocios reales.</h2>
-        <p>Desde consultoría en logística hasta herramientas digitales — todo diseñado para que tu negocio funcione mejor con menos caos.</p>
+        <div class="section-label">Servicios</div>
+        <h2 class="section-title">¿En qué puedo ayudarte?</h2>
+        <p style="color: var(--muted); font-size: 17px;">Consultoría en logística, supply chain y sistemas para PyMEs y emprendedores.</p>
       </div>
-
       <div class="services-grid">
-
         <div class="service-card fade-in">
           <span class="service-icon">📦</span>
-          <span class="service-tag available">Disponible</span>
           <div class="service-name">Logística & Supply Chain</div>
-          <p class="service-desc">
-            Consultoría especializada en logística y cadena de suministro para PyMEs y medianas empresas. Optimizamos tus flujos, reducimos costos y ordenamos tus operaciones de punta a punta.
-          </p>
+          <p class="service-desc">Optimización de flujos operativos, reducción de costos logísticos y diseño de procesos de punta a punta para PyMEs y medianas empresas.</p>
         </div>
-
         <div class="service-card fade-in">
           <span class="service-icon">📊</span>
-          <span class="service-tag available">Disponible</span>
-          <div class="service-name">Planeamiento de Demanda & Compras</div>
-          <p class="service-desc">
-            Analizamos tu demanda histórica para proyectar qué, cuánto y cuándo comprar. Menos stock parado, menos quiebres, más rentabilidad. Ideal para kioscos, ferreterías, almacenes y comercios con stock.
-          </p>
+          <div class="service-name">Planeamiento de Demanda</div>
+          <p class="service-desc">Análisis de ventas históricas para proyectar qué, cuánto y cuándo comprar. Menos stock parado, menos quiebres, más rentabilidad.</p>
         </div>
-
         <div class="service-card fade-in">
           <span class="service-icon">🗃️</span>
-          <span class="service-tag available">Disponible</span>
-          <div class="service-name">Gestión de Inventario & Stock</div>
-          <p class="service-desc">
-            Implementamos sistemas de control de stock adaptados a tu negocio: desde una ferretería hasta una distribuidora. Sabés en todo momento qué tenés, qué te falta y qué se mueve.
-          </p>
+          <div class="service-name">Control de Inventario</div>
+          <p class="service-desc">Sistemas de control de stock adaptados a tu negocio. Sabés en todo momento qué tenés, qué te falta y qué se está moviendo.</p>
         </div>
-
         <div class="service-card fade-in">
           <span class="service-icon">⚙️</span>
-          <span class="service-tag available">Disponible</span>
           <div class="service-name">Automatización de Procesos</div>
-          <p class="service-desc">
-            Eliminamos tareas manuales y repetitivas con sistemas automatizados en Google Sheets, Excel o herramientas digitales. Reportes, seguimientos y dashboards que se actualizan solos.
-          </p>
+          <p class="service-desc">Reportes, dashboards y flujos que se actualizan solos. Menos trabajo manual, menos errores, más tiempo para lo que importa.</p>
         </div>
-
-        <div class="service-card nexo-card fade-in">
-          <div class="nexo-inner">
-            <div class="nexo-left">
-              <span class="service-icon">🔗</span>
-              <span class="service-tag nexo-tag">Disponible ahora</span>
-              <div class="service-name">NEXO — Sistema Integral</div>
-              <p class="service-desc">
-                La herramienta todo-en-uno para gestionar tu vida personal y tu negocio desde un solo lugar. Finanzas, proyectos, hábitos, stock, ventas, análisis y mucho más. En español, pensado para Latinoamérica.
-              </p>
-              <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" class="nexo-cta">Conseguí NEXO →</a>
-            </div>
-            <div class="nexo-modules">
-              <div class="nexo-module">💰 Finanzas personales</div>
-              <div class="nexo-module">🏪 Control de negocio</div>
-              <div class="nexo-module">📦 Stock & Ventas</div>
-              <div class="nexo-module">📊 Análisis & Sugerencias</div>
-              <div class="nexo-module">🔁 Hábitos & Proyectos</div>
-              <div class="nexo-module">🛠️ Herramientas para PyMEs</div>
-            </div>
-          </div>
+        <div class="service-card fade-in" style="border-color: rgba(232,197,71,0.2); background: linear-gradient(135deg, rgba(232,197,71,0.04), var(--bg2));">
+          <span class="service-icon">🔗</span>
+          <div class="service-name">NEXO — App todo-en-uno</div>
+          <p class="service-desc">Finanzas, stock, ventas, análisis, hábitos y proyectos en una sola app. Pago único. Acceso de por vida. <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Conseguirla →</a></p>
         </div>
-
+        <div class="service-card fade-in">
+          <span class="service-icon">💬</span>
+          <div class="service-name">Consulta personalizada</div>
+          <p class="service-desc">¿No sabés por dónde empezar? Hablamos 30 minutos y te digo concretamente qué mejorar en tu negocio y cómo. Sin vueltas.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -720,12 +1436,16 @@
     <div class="contact-inner fade-in">
       <div class="section-label">Contacto</div>
       <h2 class="section-title">¿Hablamos?</h2>
-      <p>Seguime en redes o escribime directamente. Siempre estoy abierto a nuevos proyectos e ideas.</p>
+      <p>Escribime por WhatsApp o seguime en redes. Siempre estoy abierto a nuevos proyectos.</p>
 
       <div class="social-links">
-
+        <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+          WhatsApp
+        </a>
         <a href="https://www.instagram.com/gastonpetruzzellis" target="_blank" rel="noopener" class="social-link">
-          <!-- Instagram Icon -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -733,32 +1453,19 @@
           </svg>
           Instagram
         </a>
-
-        <a href="https://www.tiktok.com/@gaston_petruzzellis" target="_blank" rel="noopener" class="social-link">
-          <!-- TikTok Icon -->
+        <a href="https://www.tiktok.com/@gastonpetruzzellis" target="_blank" rel="noopener" class="social-link">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.35 6.35 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.78 1.52V7.12a4.85 4.85 0 0 1-1.01-.43z"/>
           </svg>
           TikTok
         </a>
-
-        <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="social-link">
-          <!-- WhatsApp Icon -->
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-          </svg>
-          WhatsApp
-        </a>
-
         <a href="https://www.linkedin.com/in/gaston-petruzzellis" target="_blank" rel="noopener" class="social-link">
-          <!-- LinkedIn Icon -->
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
             <circle cx="4" cy="4" r="2"/>
           </svg>
           LinkedIn
         </a>
-
       </div>
 
       <p class="contact-email">
@@ -773,7 +1480,6 @@
     <p>Hecho con intención<span>.</span></p>
   </footer>
 
-  <!-- SCROLL ANIMATION -->
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(el => {
@@ -782,8 +1488,7 @@
           observer.unobserve(el.target);
         }
       });
-    }, { threshold: 0.12 });
-
+    }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
