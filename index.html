@@ -370,8 +370,15 @@
       flex-shrink: 0;
     }
 
-    /* MOCKUP: App Window */
+    /* MOCKUP: App Window — usa la paleta real de NEXO (personal cálido), no la del sitio */
     .app-window {
+      --nexo-bg: #faf6f0;
+      --nexo-surface: #ffffff;
+      --nexo-border: #e8e0d5;
+      --nexo-primary: #14807a;
+      --nexo-accent: #e2703a;
+      --nexo-text: #1f2a28;
+      --nexo-text-secondary: #6b6258;
       background: #111;
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 14px;
@@ -413,15 +420,15 @@
     /* Sidebar mockup */
     .mock-sidebar {
       width: 200px;
-      background: #0f0f0f;
-      border-right: 1px solid rgba(255,255,255,0.05);
+      background: var(--nexo-bg);
+      border-right: 1px solid var(--nexo-border);
       padding: 20px 12px;
       flex-shrink: 0;
     }
     .mock-sidebar-logo {
       font-size: 16px;
       font-weight: 800;
-      color: var(--accent);
+      color: var(--nexo-primary);
       padding: 0 8px;
       margin-bottom: 24px;
       letter-spacing: -0.02em;
@@ -433,19 +440,19 @@
       padding: 9px 10px;
       border-radius: 8px;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--nexo-text-secondary);
       margin-bottom: 2px;
     }
     .mock-nav-item.active {
-      background: rgba(232,197,71,0.1);
-      color: var(--accent);
+      background: rgba(20,128,122,0.1);
+      color: var(--nexo-primary);
       font-weight: 600;
     }
     .mock-nav-item.section-header {
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.2);
+      color: rgba(31,42,40,0.35);
       margin-top: 14px;
       margin-bottom: 4px;
       padding-bottom: 0;
@@ -456,6 +463,7 @@
       flex: 1;
       padding: 24px;
       overflow: hidden;
+      background: var(--nexo-bg);
     }
 
     .mock-header-row {
@@ -468,10 +476,11 @@
       font-size: 16px;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: var(--nexo-text);
     }
     .mock-btn {
-      background: var(--accent);
-      color: #0c0c0c;
+      background: var(--nexo-primary);
+      color: #ffffff;
       font-size: 11px;
       font-weight: 700;
       padding: 7px 14px;
@@ -486,14 +495,14 @@
       margin-bottom: 20px;
     }
     .mock-card {
-      background: #1a1a1a;
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--nexo-surface);
+      border: 1px solid var(--nexo-border);
       border-radius: 10px;
       padding: 16px;
     }
     .mock-card-label {
       font-size: 10px;
-      color: var(--muted);
+      color: var(--nexo-text-secondary);
       margin-bottom: 6px;
       font-weight: 500;
     }
@@ -501,20 +510,21 @@
       font-size: 18px;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: var(--text);
+      color: var(--nexo-text);
     }
-    .mock-card-value.green { color: var(--green); }
-    .mock-card-value.accent { color: var(--accent); }
+    .mock-card-value.green { color: #3b8f5c; }
+    .mock-card-value.accent { color: var(--nexo-primary); }
     .mock-card-sub {
       font-size: 10px;
-      color: rgba(255,255,255,0.3);
+      color: var(--nexo-text-secondary);
+      opacity: 0.7;
       margin-top: 4px;
     }
 
     /* Chart bars */
     .mock-chart-area {
-      background: #1a1a1a;
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--nexo-surface);
+      border: 1px solid var(--nexo-border);
       border-radius: 10px;
       padding: 16px 20px;
       margin-bottom: 12px;
@@ -522,7 +532,7 @@
     .mock-chart-title {
       font-size: 11px;
       font-weight: 600;
-      color: var(--muted);
+      color: var(--nexo-text-secondary);
       margin-bottom: 16px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -545,13 +555,14 @@
     .mock-bar {
       width: 100%;
       border-radius: 4px 4px 0 0;
-      background: rgba(232,197,71,0.3);
+      background: rgba(20,128,122,0.25);
       transition: height 0.3s;
     }
-    .mock-bar.highlight { background: var(--accent); }
+    .mock-bar.highlight { background: var(--nexo-primary); }
     .mock-bar-label {
       font-size: 9px;
-      color: rgba(255,255,255,0.3);
+      color: var(--nexo-text-secondary);
+      opacity: 0.7;
     }
 
     /* Horizontal bars */
@@ -567,7 +578,7 @@
     }
     .mock-hbar-name {
       font-size: 11px;
-      color: var(--muted);
+      color: var(--nexo-text-secondary);
       width: 100px;
       flex-shrink: 0;
       white-space: nowrap;
@@ -577,19 +588,19 @@
     .mock-hbar-track {
       flex: 1;
       height: 8px;
-      background: rgba(255,255,255,0.05);
+      background: var(--nexo-border);
       border-radius: 4px;
       overflow: hidden;
     }
     .mock-hbar-fill {
       height: 100%;
       border-radius: 4px;
-      background: var(--accent);
+      background: var(--nexo-primary);
     }
     .mock-hbar-val {
       font-size: 11px;
       font-weight: 600;
-      color: var(--text);
+      color: var(--nexo-text);
       width: 40px;
       text-align: right;
       flex-shrink: 0;
@@ -597,14 +608,14 @@
 
     /* Presupuesto mockup */
     .mock-budget {
-      background: #1a1a1a;
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--nexo-surface);
+      border: 1px solid var(--nexo-border);
       border-radius: 10px;
       overflow: hidden;
     }
     .mock-budget-header {
-      background: rgba(232,197,71,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(20,128,122,0.08);
+      border-bottom: 1px solid var(--nexo-border);
       padding: 14px 18px;
       display: flex;
       justify-content: space-between;
@@ -613,11 +624,11 @@
     .mock-budget-title {
       font-size: 13px;
       font-weight: 700;
-      color: var(--text);
+      color: var(--nexo-text);
     }
     .mock-budget-num {
       font-size: 11px;
-      color: var(--accent);
+      color: var(--nexo-primary);
       font-weight: 600;
     }
     .mock-budget-row {
@@ -625,32 +636,34 @@
       grid-template-columns: 1fr 60px 80px 90px;
       padding: 11px 18px;
       font-size: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--nexo-text);
+      border-bottom: 1px solid var(--nexo-border);
       gap: 8px;
     }
     .mock-budget-row.head {
       font-size: 10px;
       font-weight: 600;
-      color: var(--muted);
+      color: var(--nexo-text-secondary);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
     .mock-budget-row.total {
-      background: rgba(232,197,71,0.05);
+      background: rgba(20,128,122,0.06);
       font-weight: 700;
     }
     .mock-budget-row span:not(:first-child) { text-align: right; }
-    .mock-budget-row span.accent { color: var(--accent); }
+    .mock-budget-row span.accent { color: var(--nexo-primary); }
     .mock-pdf-btn {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       gap: 8px;
       padding: 12px 18px;
+      background: var(--nexo-surface);
     }
     .mock-pdf-pill {
-      background: var(--accent);
-      color: #0c0c0c;
+      background: var(--nexo-accent);
+      color: #ffffff;
       font-size: 11px;
       font-weight: 700;
       padding: 7px 14px;
@@ -914,7 +927,7 @@
         Logística, sistemas<br />y <span class="highlight">resultados reales</span>
       </h1>
       <p class="hero-subtitle">
-        Soy Gastón Petruzzellis. Ayudo a PyMEs y emprendedores a ordenar sus operaciones, controlar su stock y tomar mejores decisiones. También creé NEXO — la app todo-en-uno para gestionar tu negocio y tu vida.
+        Soy Gastón Petruzzellis. Ayudo a PyMEs y emprendedores a ordenar sus operaciones, controlar su stock y tomar mejores decisiones. También creé NEXO — la app todo-en-uno para ordenar tu vida y, si querés, tu trabajo también.
       </p>
       <div class="hero-cta">
         <a href="#casos" class="btn-primary">Ver casos de impacto →</a>
@@ -1044,19 +1057,19 @@
       <div class="nexo-header fade-in">
         <div>
           <div class="nexo-badge">🔗 Producto propio</div>
-          <h2 class="section-title">NEXO — Clientes, presupuestos<br />y cobros en un solo lugar</h2>
-          <p class="section-sub">La herramienta para freelancers y autónomos argentinos. Empezá gratis con el plan Lite — clientes, presupuestos y cobros sin pagar nada. Cuando querés más, upgrade a Pro con un solo pago.</p>
+          <h2 class="section-title">NEXO — Todo tu día a día,<br />en un solo lugar</h2>
+          <p class="section-sub">Finanzas, hábitos, proyectos y diario personal — y si tenés un trabajo independiente, sumás clientes, presupuestos y cobros cuando quieras. Probá las 19 herramientas gratis por 24 horas, sin tarjeta. Si te sirve, un pago único de $29.900 y es tuyo para siempre.</p>
         </div>
         <div class="nexo-cta-wrap" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-          <a href="https://nexo.gastonpetruzzellis.com/login" target="_blank" rel="noopener" class="btn-primary">Empezar gratis con Lite →</a>
-          <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" style="color:var(--muted);font-size:14px;text-decoration:none;padding-left:4px;">Ver NEXO Pro — $39.900 →</a>
+          <a href="https://nexo.gastonpetruzzellis.com/login" target="_blank" rel="noopener" class="btn-primary">Probar NEXO gratis →</a>
+          <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" style="color:var(--muted);font-size:14px;text-decoration:none;padding-left:4px;">Ver precio — $29.900 →</a>
         </div>
       </div>
 
       <!-- MOCKUP 1: Dashboard con análisis -->
       <div class="fade-in" style="margin-bottom: 48px;">
-        <div class="nexo-feature-label">📊 Análisis de demanda</div>
-        <p class="nexo-feature-desc">Visualizá qué productos vendés más, cómo evoluciona tu facturación semana a semana y en qué días concentrás más ventas. Todo calculado automáticamente de tus datos reales.</p>
+        <div class="nexo-feature-label">📊 Módulo Trabajo (opcional) — Análisis de demanda</div>
+        <p class="nexo-feature-desc">Si activás el módulo Trabajo, visualizá qué productos vendés más, cómo evoluciona tu facturación semana a semana y en qué días concentrás más ventas. Todo calculado automáticamente de tus datos reales.</p>
         <div class="app-window">
           <div class="app-titlebar">
             <div class="app-dot red"></div>
@@ -1066,16 +1079,17 @@
           </div>
           <div class="app-body">
             <div class="mock-sidebar">
-              <div class="mock-sidebar-logo">NEXO</div>
+              <div class="mock-sidebar-logo">nexo</div>
+              <div class="mock-nav-item section-header">Personal</div>
               <div class="mock-nav-item">🏠 Dashboard</div>
               <div class="mock-nav-item">💰 Finanzas</div>
               <div class="mock-nav-item">📋 Proyectos</div>
               <div class="mock-nav-item">🔁 Hábitos</div>
-              <div class="mock-nav-item section-header">Mi Negocio</div>
+              <div class="mock-nav-item section-header">Trabajo</div>
               <div class="mock-nav-item">📦 Productos</div>
               <div class="mock-nav-item">🛒 Ventas</div>
               <div class="mock-nav-item active">📊 Análisis</div>
-              <div class="mock-nav-item">💡 Sugerencias</div>
+              <div class="mock-nav-item">👥 Clientes</div>
             </div>
             <div class="mock-main">
               <div class="mock-header-row">
@@ -1175,7 +1189,7 @@
       <!-- MOCKUP 2: Presupuestos -->
       <div class="nexo-showcase-grid fade-in">
         <div>
-          <div class="nexo-feature-label">🧾 Presupuestos con PDF</div>
+          <div class="nexo-feature-label">🧾 Módulo Trabajo — Presupuestos con PDF</div>
           <p class="nexo-feature-desc">Armás un presupuesto con todos los ítems, precios y datos del cliente. En un click lo descargás como PDF listo para enviar. Sin Word, sin Canva, sin nada extra.</p>
           <div class="app-window">
             <div class="app-titlebar">
@@ -1233,7 +1247,7 @@
         </div>
 
         <div>
-          <div class="nexo-feature-label">📦 Control de stock en tiempo real</div>
+          <div class="nexo-feature-label">📦 Módulo Trabajo — Control de stock en tiempo real</div>
           <p class="nexo-feature-desc">Cada venta registrada descuenta el stock automáticamente. Recibís alertas cuando un producto llega al mínimo. Sugerencias inteligentes de qué reponer y cuándo.</p>
           <div class="app-window">
             <div class="app-titlebar">
@@ -1421,7 +1435,7 @@
         <div class="service-card fade-in" style="border-color: rgba(232,197,71,0.2); background: linear-gradient(135deg, rgba(232,197,71,0.04), var(--bg2));">
           <span class="service-icon">🔗</span>
           <div class="service-name">NEXO — App todo-en-uno</div>
-          <p class="service-desc">Finanzas, stock, ventas, análisis, hábitos y proyectos en una sola app. Pago único. Acceso de por vida. <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Conseguirla →</a></p>
+          <p class="service-desc">Finanzas, hábitos, proyectos y diario personal — con stock, ventas y análisis como módulo opcional si tenés un trabajo independiente. Probá 24hs gratis, después pago único de $29.900. <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Conseguirla →</a></p>
         </div>
         <div class="service-card fade-in">
           <span class="service-icon">💬</span>
