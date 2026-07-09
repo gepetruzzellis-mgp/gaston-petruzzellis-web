@@ -12,17 +12,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0c0c0c;
-      --bg2: #141414;
-      --bg3: #1c1c1c;
-      --border: rgba(255,255,255,0.07);
-      --text: #f0f0f0;
-      --muted: #888;
-      --accent: #e8c547;
-      --accent2: #c9a82c;
+      --bg: #faf6f0;
+      --bg2: #f3ece1;
+      --bg3: #ffffff;
+      --border: rgba(31,42,40,0.1);
+      --text: #1f2a28;
+      --muted: #6b6258;
+      --accent: #14807a;
+      --accent2: #0f6259;
+      --accent3: #e2703a;
       --radius: 16px;
-      --green: #4ade80;
-      --red: #f87171;
+      --green: #3b8f5c;
+      --red: #c94b3f;
     }
 
     html { scroll-behavior: smooth; }
@@ -46,7 +47,7 @@
       align-items: center;
       padding: 20px 48px;
       backdrop-filter: blur(20px);
-      background: rgba(12,12,12,0.85);
+      background: rgba(250,246,240,0.85);
       border-bottom: 1px solid var(--border);
     }
 
@@ -78,7 +79,7 @@
       align-items: center;
       gap: 6px;
       background: var(--accent);
-      color: #0c0c0c;
+      color: #ffffff;
       font-weight: 600;
       font-size: 13px;
       padding: 9px 20px;
@@ -136,8 +137,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(232,197,71,0.1);
-      border: 1px solid rgba(232,197,71,0.25);
+      background: rgba(20,128,122,0.1);
+      border: 1px solid rgba(20,128,122,0.25);
       color: var(--accent);
       font-size: 12px;
       font-weight: 500;
@@ -188,7 +189,7 @@
       align-items: center;
       gap: 8px;
       background: var(--accent);
-      color: #0c0c0c;
+      color: #ffffff;
       font-weight: 600;
       font-size: 14px;
       padding: 14px 28px;
@@ -212,7 +213,7 @@
       border: 1px solid var(--border);
       transition: all 0.2s;
     }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+    .btn-secondary:hover { border-color: rgba(31,42,40,0.25); background: rgba(31,42,40,0.04); }
 
     .hero-stats {
       display: flex;
@@ -266,7 +267,7 @@
       opacity: 0;
       transition: opacity 0.2s;
     }
-    .caso-card:hover { border-color: rgba(232,197,71,0.2); transform: translateY(-4px); }
+    .caso-card:hover { border-color: rgba(20,128,122,0.2); transform: translateY(-4px); }
     .caso-card:hover::after { opacity: 1; }
 
     .caso-tag {
@@ -277,9 +278,9 @@
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 100px;
-      background: rgba(232,197,71,0.08);
+      background: rgba(20,128,122,0.08);
       color: var(--accent);
-      border: 1px solid rgba(232,197,71,0.2);
+      border: 1px solid rgba(20,128,122,0.2);
       margin-bottom: 20px;
     }
 
@@ -356,8 +357,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(232,197,71,0.1);
-      border: 1px solid rgba(232,197,71,0.25);
+      background: rgba(20,128,122,0.1);
+      border: 1px solid rgba(20,128,122,0.25);
       color: var(--accent);
       font-size: 12px;
       font-weight: 600;
@@ -720,7 +721,7 @@
       transition: border-color 0.2s;
       position: relative;
     }
-    .testi-card:hover { border-color: rgba(232,197,71,0.2); }
+    .testi-card:hover { border-color: rgba(20,128,122,0.2); }
 
     .testi-stars {
       display: flex;
@@ -754,7 +755,7 @@
       justify-content: center;
       font-size: 14px;
       font-weight: 800;
-      color: #0c0c0c;
+      color: #ffffff;
       flex-shrink: 0;
     }
     .testi-name {
@@ -775,8 +776,8 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       color: var(--accent);
-      background: rgba(232,197,71,0.08);
-      border: 1px solid rgba(232,197,71,0.2);
+      background: rgba(20,128,122,0.08);
+      border: 1px solid rgba(20,128,122,0.2);
       border-radius: 100px;
       padding: 3px 8px;
     }
@@ -803,7 +804,7 @@
       padding: 32px 28px;
       transition: all 0.25s;
     }
-    .service-card:hover { border-color: rgba(232,197,71,0.25); transform: translateY(-3px); }
+    .service-card:hover { border-color: rgba(20,128,122,0.25); transform: translateY(-3px); }
 
     .service-icon { font-size: 28px; margin-bottom: 16px; display: block; }
     .service-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
@@ -850,8 +851,8 @@
       background: var(--bg3);
     }
     .social-link:hover {
-      border-color: rgba(232,197,71,0.3);
-      background: rgba(232,197,71,0.06);
+      border-color: rgba(20,128,122,0.3);
+      background: rgba(20,128,122,0.06);
       color: var(--accent);
       transform: translateY(-2px);
     }
@@ -1265,7 +1266,7 @@
                 <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; padding: 8px 12px; font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">
                   <span>Producto</span><span style="text-align:center">Stock</span><span style="text-align:center">Mínimo</span><span style="text-align:right">Precio</span>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: var(--nexo-surface); border: 1px solid var(--nexo-border); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
                   <span>Gaseosa 2.5L</span>
                   <span style="text-align:center; color: var(--green); font-weight:700">42 u</span>
                   <span style="text-align:center; color: var(--muted)">10</span>
@@ -1277,7 +1278,7 @@
                   <span style="text-align:center; color: var(--muted)">15</span>
                   <span style="text-align:right; font-weight:600">$650</span>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
+                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: var(--nexo-surface); border: 1px solid var(--nexo-border); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
                   <span>Snacks mix</span>
                   <span style="text-align:center; color: var(--green); font-weight:700">28 u</span>
                   <span style="text-align:center; color: var(--muted)">8</span>
@@ -1432,7 +1433,7 @@
           <div class="service-name">Automatización de Procesos</div>
           <p class="service-desc">Reportes, dashboards y flujos que se actualizan solos. Menos trabajo manual, menos errores, más tiempo para lo que importa.</p>
         </div>
-        <div class="service-card fade-in" style="border-color: rgba(232,197,71,0.2); background: linear-gradient(135deg, rgba(232,197,71,0.04), var(--bg2));">
+        <div class="service-card fade-in" style="border-color: rgba(20,128,122,0.2); background: linear-gradient(135deg, rgba(20,128,122,0.04), var(--bg2));">
           <span class="service-icon">🔗</span>
           <div class="service-name">NEXO — App todo-en-uno</div>
           <p class="service-desc">Finanzas, hábitos, proyectos y diario personal — con stock, ventas y análisis como módulo opcional si tenés un trabajo independiente. Probá 24hs gratis, después pago único de $29.900. <a href="https://nexo.gastonpetruzzellis.com/comprar" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Conseguirla →</a></p>
