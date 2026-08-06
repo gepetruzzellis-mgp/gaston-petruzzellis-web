@@ -236,6 +236,61 @@
       margin-top: 2px;
     }
 
+    /* ── SOBRE MÍ ── */
+    #sobre-mi { border-top: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); font-weight: 600; }
+
+    .about-panel {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .about-panel-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .about-list .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .about-list span.muted { color: var(--muted); }
+
     /* ── CASOS / PORTFOLIO ── */
     #casos { background: var(--bg2); border-top: 1px solid var(--border); }
 
@@ -888,6 +943,7 @@
       .nav-links { display: none; }
       section { padding: 70px 24px; }
       .casos-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
       .testi-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .nexo-showcase-grid { grid-template-columns: 1fr; }
@@ -913,6 +969,7 @@
   <nav>
     <a class="nav-logo" href="#hero">Gastón<span>.</span></a>
     <ul class="nav-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#casos">Casos</a></li>
       <li><a href="#gestionapp">GestionApp</a></li>
       <li><a href="#testimoniales">Reviews</a></li>
@@ -951,6 +1008,36 @@
         <div>
           <div class="hero-stat-num">8</div>
           <div class="hero-stat-label">módulos conectados en un solo sistema</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <div class="section-label">Sobre mí</div>
+          <h2 class="section-title">Vengo de la logística,<br />no de la teoría</h2>
+          <p>
+            Soy <strong>Gastón Petruzzellis</strong>, de Buenos Aires. Trabajé varios años en logística y supply chain antes de dedicarme de lleno a ayudar a PyMEs y emprendedores a ordenar sus operaciones: stock, compras, ventas y procesos del día a día.
+          </p>
+          <p>
+            Esa experiencia en el terreno — viendo depósitos desordenados, quiebres de stock y decisiones tomadas "a ojo" — es lo que me llevó a crear <strong>GestionApp</strong>, mi propio sistema de gestión para que cualquier pyme argentina pueda controlar su inventario y su negocio sin depender de planillas sueltas ni de la memoria.
+          </p>
+          <p>
+            Hoy combino las dos cosas: consultoría 1 a 1 para negocios que necesitan poner orden ya, y un producto propio para quienes quieren un sistema que los acompañe todos los días.
+          </p>
+        </div>
+        <div class="about-panel fade-in">
+          <div class="about-panel-title">En qué te puedo ayudar</div>
+          <ul class="about-list">
+            <li><span class="dot"></span><span><strong>Gestión de stock e inventario</strong> — <span class="muted">saber en todo momento qué tenés, qué te falta y qué se está agotando.</span></span></li>
+            <li><span class="dot"></span><span><strong>Planeamiento de compras</strong> — <span class="muted">comprar según lo que realmente se vende, no según intuición.</span></span></li>
+            <li><span class="dot"></span><span><strong>Procesos y logística</strong> — <span class="muted">ordenar el flujo diario de tu operación de punta a punta.</span></span></li>
+            <li><span class="dot"></span><span><strong>Un sistema para gestionar todo</strong> — <span class="muted">GestionApp, para dejar de usar 5 herramientas sueltas.</span></span></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1348,13 +1435,13 @@
       <div class="services-header fade-in">
         <div class="section-label">Servicios</div>
         <h2 class="section-title">¿En qué puedo ayudarte?</h2>
-        <p style="color: var(--muted); font-size: 17px;">Consultoría en logística, supply chain y sistemas para PyMEs y emprendedores.</p>
+        <p style="color: var(--muted); font-size: 17px;">Consultoría en logística, stock e inventario, y sistemas de gestión para PyMEs y empresas.</p>
       </div>
       <div class="services-grid">
         <div class="service-card fade-in">
-          <span class="service-icon">📦</span>
-          <div class="service-name">Logística & Supply Chain</div>
-          <p class="service-desc">Optimización de flujos operativos, reducción de costos logísticos y diseño de procesos de punta a punta para PyMEs y medianas empresas.</p>
+          <span class="service-icon">🗃️</span>
+          <div class="service-name">Control de Inventario</div>
+          <p class="service-desc">Sistemas de control de stock adaptados a tu negocio. Sabés en todo momento qué tenés, qué te falta y qué se está moviendo.</p>
         </div>
         <div class="service-card fade-in">
           <span class="service-icon">📊</span>
@@ -1362,9 +1449,9 @@
           <p class="service-desc">Análisis de ventas históricas para proyectar qué, cuánto y cuándo comprar. Menos stock parado, menos quiebres, más rentabilidad.</p>
         </div>
         <div class="service-card fade-in">
-          <span class="service-icon">🗃️</span>
-          <div class="service-name">Control de Inventario</div>
-          <p class="service-desc">Sistemas de control de stock adaptados a tu negocio. Sabés en todo momento qué tenés, qué te falta y qué se está moviendo.</p>
+          <span class="service-icon">📦</span>
+          <div class="service-name">Logística & Supply Chain</div>
+          <p class="service-desc">Optimización de flujos operativos, reducción de costos logísticos y diseño de procesos de punta a punta para PyMEs y medianas empresas.</p>
         </div>
         <div class="service-card fade-in">
           <span class="service-icon">⚙️</span>
