@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gastón Petruzzellis — Logística, Sistemas & GestionApp</title>
-  <meta name="description" content="Consultor en Logística, Supply Chain y creador de GestionApp. Casos reales, soluciones concretas." />
+  <title>PSC Logística — Gestión de Inventario, Planificación y Procesos</title>
+  <meta name="description" content="PSC Logística: consultoría freelance en gestión de inventario, planificación de demanda y mejora continua de procesos para PyMEs y empresas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -396,360 +396,6 @@
       flex-shrink: 0;
     }
 
-    /* ── GESTIONAPP SHOWCASE ── */
-    #gestionapp { background: var(--bg); border-top: 1px solid var(--border); }
-
-    .nexo-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 60px;
-      gap: 32px;
-      flex-wrap: wrap;
-    }
-
-    .nexo-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(20,128,122,0.1);
-      border: 1px solid rgba(20,128,122,0.25);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 100px;
-      margin-bottom: 12px;
-    }
-
-    .nexo-cta-wrap {
-      flex-shrink: 0;
-    }
-
-    /* MOCKUP: App Window — usa la paleta real de NEXO (personal cálido), no la del sitio */
-    .app-window {
-      --nexo-bg: #faf6f0;
-      --nexo-surface: #ffffff;
-      --nexo-border: #e8e0d5;
-      --nexo-primary: #14807a;
-      --nexo-accent: #e2703a;
-      --nexo-text: #1f2a28;
-      --nexo-text-secondary: #6b6258;
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
-    }
-
-    .app-titlebar {
-      background: #1a1a1a;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .app-dot {
-      width: 11px; height: 11px;
-      border-radius: 50%;
-    }
-    .app-dot.red { background: #ff5f56; }
-    .app-dot.yellow { background: #ffbd2e; }
-    .app-dot.green { background: #27c93f; }
-    .app-url {
-      flex: 1;
-      background: rgba(255,255,255,0.05);
-      border-radius: 6px;
-      padding: 5px 12px;
-      font-size: 11px;
-      color: var(--muted);
-      margin-left: 10px;
-      letter-spacing: 0.01em;
-    }
-
-    .app-body {
-      display: flex;
-      min-height: 400px;
-    }
-
-    /* Sidebar mockup */
-    .mock-sidebar {
-      width: 200px;
-      background: var(--nexo-bg);
-      border-right: 1px solid var(--nexo-border);
-      padding: 20px 12px;
-      flex-shrink: 0;
-    }
-    .mock-sidebar-logo {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--nexo-primary);
-      padding: 0 8px;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-    .mock-nav-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      padding: 9px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      color: var(--nexo-text-secondary);
-      margin-bottom: 2px;
-    }
-    .mock-nav-item.active {
-      background: rgba(20,128,122,0.1);
-      color: var(--nexo-primary);
-      font-weight: 600;
-    }
-    .mock-nav-item.section-header {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(31,42,40,0.35);
-      margin-top: 14px;
-      margin-bottom: 4px;
-      padding-bottom: 0;
-    }
-
-    /* Main content mockup */
-    .mock-main {
-      flex: 1;
-      padding: 24px;
-      overflow: hidden;
-      background: var(--nexo-bg);
-    }
-
-    .mock-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .mock-page-title {
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--nexo-text);
-    }
-    .mock-btn {
-      background: var(--nexo-primary);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 7px 14px;
-      border-radius: 6px;
-    }
-
-    /* Dashboard cards */
-    .mock-cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .mock-card {
-      background: var(--nexo-surface);
-      border: 1px solid var(--nexo-border);
-      border-radius: 10px;
-      padding: 16px;
-    }
-    .mock-card-label {
-      font-size: 10px;
-      color: var(--nexo-text-secondary);
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-    .mock-card-value {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--nexo-text);
-    }
-    .mock-card-value.green { color: #3b8f5c; }
-    .mock-card-value.accent { color: var(--nexo-primary); }
-    .mock-card-sub {
-      font-size: 10px;
-      color: var(--nexo-text-secondary);
-      opacity: 0.7;
-      margin-top: 4px;
-    }
-
-    /* Chart bars */
-    .mock-chart-area {
-      background: var(--nexo-surface);
-      border: 1px solid var(--nexo-border);
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin-bottom: 12px;
-    }
-    .mock-chart-title {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--nexo-text-secondary);
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .mock-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      height: 80px;
-    }
-    .mock-bar-wrap {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      height: 100%;
-      justify-content: flex-end;
-    }
-    .mock-bar {
-      width: 100%;
-      border-radius: 4px 4px 0 0;
-      background: rgba(20,128,122,0.25);
-      transition: height 0.3s;
-    }
-    .mock-bar.highlight { background: var(--nexo-primary); }
-    .mock-bar-label {
-      font-size: 9px;
-      color: var(--nexo-text-secondary);
-      opacity: 0.7;
-    }
-
-    /* Horizontal bars */
-    .mock-hbars {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mock-hbar-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .mock-hbar-name {
-      font-size: 11px;
-      color: var(--nexo-text-secondary);
-      width: 100px;
-      flex-shrink: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .mock-hbar-track {
-      flex: 1;
-      height: 8px;
-      background: var(--nexo-border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .mock-hbar-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: var(--nexo-primary);
-    }
-    .mock-hbar-val {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--nexo-text);
-      width: 40px;
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    /* Presupuesto mockup */
-    .mock-budget {
-      background: var(--nexo-surface);
-      border: 1px solid var(--nexo-border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .mock-budget-header {
-      background: rgba(20,128,122,0.08);
-      border-bottom: 1px solid var(--nexo-border);
-      padding: 14px 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .mock-budget-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--nexo-text);
-    }
-    .mock-budget-num {
-      font-size: 11px;
-      color: var(--nexo-primary);
-      font-weight: 600;
-    }
-    .mock-budget-row {
-      display: grid;
-      grid-template-columns: 1fr 60px 80px 90px;
-      padding: 11px 18px;
-      font-size: 12px;
-      color: var(--nexo-text);
-      border-bottom: 1px solid var(--nexo-border);
-      gap: 8px;
-    }
-    .mock-budget-row.head {
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--nexo-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .mock-budget-row.total {
-      background: rgba(20,128,122,0.06);
-      font-weight: 700;
-    }
-    .mock-budget-row span:not(:first-child) { text-align: right; }
-    .mock-budget-row span.accent { color: var(--nexo-primary); }
-    .mock-pdf-btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      padding: 12px 18px;
-      background: var(--nexo-surface);
-    }
-    .mock-pdf-pill {
-      background: var(--nexo-accent);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 7px 14px;
-      border-radius: 6px;
-    }
-
-    /* Showcase grid */
-    .nexo-showcase-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .nexo-feature-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .nexo-feature-desc {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 16px;
-      line-height: 1.65;
-    }
-
     /* ── TESTIMONIALES ── */
     #testimoniales {
       background: var(--bg2);
@@ -946,10 +592,6 @@
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
       .testi-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr 1fr; }
-      .nexo-showcase-grid { grid-template-columns: 1fr; }
-      .nexo-header { flex-direction: column; align-items: flex-start; }
-      .mock-sidebar { display: none; }
-      .mock-cards { grid-template-columns: 1fr 1fr; }
       footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
     }
 
@@ -958,7 +600,6 @@
       .btn-primary, .btn-secondary { justify-content: center; }
       .services-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 28px; }
-      .mock-cards { grid-template-columns: 1fr 1fr; }
       .nav-cta { display: none; }
     }
   </style>
@@ -967,15 +608,15 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#hero">Gastón<span>.</span></a>
+    <a class="nav-logo" href="#hero">PSC<span>.</span></a>
     <ul class="nav-links">
       <li><a href="#sobre-mi">Sobre mí</a></li>
       <li><a href="#casos">Casos</a></li>
-      <li><a href="#gestionapp">GestionApp</a></li>
+      <li><a href="#servicios">Servicios</a></li>
       <li><a href="#testimoniales">Reviews</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <a href="https://gestionapp.ar" target="_blank" rel="noopener" class="nav-cta">Conocé GestionApp →</a>
+    <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="nav-cta">Hablemos →</a>
   </nav>
 
   <!-- HERO -->
@@ -983,14 +624,14 @@
     <div class="hero-content">
       <div class="hero-badge">Disponible para proyectos</div>
       <h1 class="hero-title">
-        Logística, sistemas<br />y <span class="highlight">resultados reales</span>
+        Stock, procesos<br />y <span class="highlight">resultados reales</span>
       </h1>
       <p class="hero-subtitle">
-        Soy Gastón Petruzzellis. Ayudo a PyMEs y emprendedores a ordenar sus operaciones, controlar su stock y tomar mejores decisiones. También creé GestionApp — el sistema de gestión para que las pymes argentinas manejen stock, ventas, cobros y facturación en un solo lugar.
+        Soy PSC Logística. Ayudo a PyMEs y empresas a ordenar su gestión de inventario, planificar mejor sus compras y mejorar sus procesos de forma continua — con soluciones concretas, no con teoría.
       </p>
       <div class="hero-cta">
         <a href="#casos" class="btn-primary">Ver casos de impacto →</a>
-        <a href="https://gestionapp.ar" target="_blank" rel="noopener" class="btn-secondary">Conocer GestionApp</a>
+        <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="btn-secondary">Hablar por WhatsApp</a>
       </div>
       <div class="hero-stats">
         <div>
@@ -1002,12 +643,12 @@
           <div class="hero-stat-label">negocios asesorados</div>
         </div>
         <div>
-          <div class="hero-stat-num">1</div>
-          <div class="hero-stat-label">sistema de gestión propio</div>
+          <div class="hero-stat-num">68%</div>
+          <div class="hero-stat-label">menos quiebres de stock en clientes</div>
         </div>
         <div>
-          <div class="hero-stat-num">8</div>
-          <div class="hero-stat-label">módulos conectados en un solo sistema</div>
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-label">rubros distintos con casos de éxito</div>
         </div>
       </div>
     </div>
@@ -1021,22 +662,22 @@
           <div class="section-label">Sobre mí</div>
           <h2 class="section-title">Vengo de la logística,<br />no de la teoría</h2>
           <p>
-            Soy <strong>Gastón Petruzzellis</strong>, de Buenos Aires. Trabajé varios años en logística y supply chain antes de dedicarme de lleno a ayudar a PyMEs y emprendedores a ordenar sus operaciones: stock, compras, ventas y procesos del día a día.
+            <strong>PSC Logística</strong> es la consultora freelance que fundé después de varios años trabajando en logística y supply chain. Ayudo a PyMEs y empresas a ordenar su gestión de inventario, planificar mejor sus compras y mejorar sus procesos del día a día.
           </p>
           <p>
-            Esa experiencia en el terreno — viendo depósitos desordenados, quiebres de stock y decisiones tomadas "a ojo" — es lo que me llevó a crear <strong>GestionApp</strong>, mi propio sistema de gestión para que cualquier pyme argentina pueda controlar su inventario y su negocio sin depender de planillas sueltas ni de la memoria.
+            Soy <strong>Gastón Petruzzellis</strong>, de Buenos Aires. Esa experiencia en el terreno — viendo depósitos desordenados, quiebres de stock y decisiones tomadas "a ojo" — es la que me llevó incluso a desarrollar mi propio sistema de gestión para pymes, lo que me dio una mirada todavía más profunda de los problemas reales de stock y procesos.
           </p>
           <p>
-            Hoy combino las dos cosas: consultoría 1 a 1 para negocios que necesitan poner orden ya, y un producto propio para quienes quieren un sistema que los acompañe todos los días.
+            Hoy trabajo 1 a 1 con cada cliente: diagnóstico concreto, solución a medida y resultados medibles. Sin vueltas.
           </p>
         </div>
         <div class="about-panel fade-in">
           <div class="about-panel-title">En qué te puedo ayudar</div>
           <ul class="about-list">
             <li><span class="dot"></span><span><strong>Gestión de stock e inventario</strong> — <span class="muted">saber en todo momento qué tenés, qué te falta y qué se está agotando.</span></span></li>
-            <li><span class="dot"></span><span><strong>Planeamiento de compras</strong> — <span class="muted">comprar según lo que realmente se vende, no según intuición.</span></span></li>
-            <li><span class="dot"></span><span><strong>Procesos y logística</strong> — <span class="muted">ordenar el flujo diario de tu operación de punta a punta.</span></span></li>
-            <li><span class="dot"></span><span><strong>Un sistema para gestionar todo</strong> — <span class="muted">GestionApp, para dejar de usar 5 herramientas sueltas.</span></span></li>
+            <li><span class="dot"></span><span><strong>Planeamiento de compras y demanda</strong> — <span class="muted">comprar según lo que realmente se vende, no según intuición.</span></span></li>
+            <li><span class="dot"></span><span><strong>Mejora continua de procesos</strong> — <span class="muted">ordenar el flujo diario de tu operación de punta a punta.</span></span></li>
+            <li><span class="dot"></span><span><strong>Logística & supply chain</strong> — <span class="muted">rutas, distribución y costos operativos bajo control.</span></span></li>
           </ul>
         </div>
       </div>
@@ -1139,251 +780,6 @@
     </div>
   </section>
 
-  <!-- GESTIONAPP SHOWCASE -->
-  <section id="gestionapp">
-    <div class="section-inner">
-
-      <div class="nexo-header fade-in">
-        <div>
-          <div class="nexo-badge">🔗 Producto propio</div>
-          <h2 class="section-title">GestionApp — Tu pyme,<br />ordenada en un solo lugar</h2>
-          <p class="section-sub">Stock, compras, clientes, ventas, presupuestos, cobros, vencimientos y facturación electrónica — todo conectado en un solo sistema, pensado para pymes argentinas. Sin instalar nada, desde la web.</p>
-        </div>
-        <div class="nexo-cta-wrap" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
-          <a href="https://gestionapp.ar" target="_blank" rel="noopener" class="btn-primary">Conocer GestionApp →</a>
-          <a href="https://wa.me/541138273942" target="_blank" rel="noopener" style="color:var(--muted);font-size:14px;text-decoration:none;padding-left:4px;">Hablar por WhatsApp →</a>
-        </div>
-      </div>
-
-      <!-- MOCKUP 1: Dashboard con análisis -->
-      <div class="fade-in" style="margin-bottom: 48px;">
-        <div class="nexo-feature-label">📊 Finanzas y caja — vista consolidada</div>
-        <p class="nexo-feature-desc">Ingresos, egresos y saldo de caja del mes, más una vista consolidada de tus ventas y compras. Todo calculado automáticamente de tus datos reales, por empresa.</p>
-        <div class="app-window">
-          <div class="app-titlebar">
-            <div class="app-dot red"></div>
-            <div class="app-dot yellow"></div>
-            <div class="app-dot green"></div>
-            <div class="app-url">gestionapp.ar/dashboard/finanzas</div>
-          </div>
-          <div class="app-body">
-            <div class="mock-sidebar">
-              <div class="mock-sidebar-logo">gestionapp</div>
-              <div class="mock-nav-item">📦 Stock e inventario</div>
-              <div class="mock-nav-item">🧾 Compras y proveedores</div>
-              <div class="mock-nav-item">👥 Clientes y ventas</div>
-              <div class="mock-nav-item active">📊 Finanzas y caja</div>
-              <div class="mock-nav-item">🧮 Presupuestos</div>
-              <div class="mock-nav-item">💳 Cobros</div>
-              <div class="mock-nav-item">⏰ Vencimientos</div>
-            </div>
-            <div class="mock-main">
-              <div class="mock-header-row">
-                <div class="mock-page-title">Finanzas y caja</div>
-              </div>
-              <div class="mock-cards" style="grid-template-columns: repeat(4,1fr); margin-bottom: 16px;">
-                <div class="mock-card">
-                  <div class="mock-card-label">Total este mes</div>
-                  <div class="mock-card-value accent">$284.500</div>
-                  <div class="mock-card-sub">↑ 12% vs mes anterior</div>
-                </div>
-                <div class="mock-card">
-                  <div class="mock-card-label">Transacciones</div>
-                  <div class="mock-card-value">143</div>
-                  <div class="mock-card-sub">este mes</div>
-                </div>
-                <div class="mock-card">
-                  <div class="mock-card-label">Producto estrella</div>
-                  <div class="mock-card-value" style="font-size:13px; padding-top:4px;">Gaseosa 2.5L</div>
-                  <div class="mock-card-sub">48 unidades</div>
-                </div>
-                <div class="mock-card">
-                  <div class="mock-card-label">Mejor día</div>
-                  <div class="mock-card-value green">Viernes</div>
-                  <div class="mock-card-sub">+31% del promedio</div>
-                </div>
-              </div>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div class="mock-chart-area">
-                  <div class="mock-chart-title">Productos más vendidos</div>
-                  <div class="mock-hbars">
-                    <div class="mock-hbar-row">
-                      <div class="mock-hbar-name">Gaseosa 2.5L</div>
-                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:90%"></div></div>
-                      <div class="mock-hbar-val">48u</div>
-                    </div>
-                    <div class="mock-hbar-row">
-                      <div class="mock-hbar-name">Agua mineral</div>
-                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:65%"></div></div>
-                      <div class="mock-hbar-val">35u</div>
-                    </div>
-                    <div class="mock-hbar-row">
-                      <div class="mock-hbar-name">Snacks mix</div>
-                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:48%"></div></div>
-                      <div class="mock-hbar-val">26u</div>
-                    </div>
-                    <div class="mock-hbar-row">
-                      <div class="mock-hbar-name">Jugo botella</div>
-                      <div class="mock-hbar-track"><div class="mock-hbar-fill" style="width:30%"></div></div>
-                      <div class="mock-hbar-val">16u</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="mock-chart-area">
-                  <div class="mock-chart-title">Ventas por semana</div>
-                  <div class="mock-bars">
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar" style="height:40%"></div>
-                      <div class="mock-bar-label">S1</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar" style="height:55%"></div>
-                      <div class="mock-bar-label">S2</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar" style="height:45%"></div>
-                      <div class="mock-bar-label">S3</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar" style="height:70%"></div>
-                      <div class="mock-bar-label">S4</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar highlight" style="height:100%"></div>
-                      <div class="mock-bar-label">S5</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar" style="height:85%"></div>
-                      <div class="mock-bar-label">S6</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar" style="height:60%"></div>
-                      <div class="mock-bar-label">S7</div>
-                    </div>
-                    <div class="mock-bar-wrap">
-                      <div class="mock-bar highlight" style="height:95%"></div>
-                      <div class="mock-bar-label">S8</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MOCKUP 2: Presupuestos -->
-      <div class="nexo-showcase-grid fade-in">
-        <div>
-          <div class="nexo-feature-label">🧾 Presupuestos con PDF</div>
-          <p class="nexo-feature-desc">Armás un presupuesto con todos los ítems, precios y datos del cliente. En un click lo descargás como PDF listo para enviar. Sin Word, sin Canva, sin nada extra.</p>
-          <div class="app-window">
-            <div class="app-titlebar">
-              <div class="app-dot red"></div>
-              <div class="app-dot yellow"></div>
-              <div class="app-dot green"></div>
-              <div class="app-url">gestionapp.ar/dashboard/presupuestos</div>
-            </div>
-            <div style="padding: 20px;">
-              <div class="mock-header-row">
-                <div class="mock-page-title">Presupuesto #0042</div>
-                <div style="font-size: 11px; color: var(--muted);">Cliente: María González</div>
-              </div>
-              <div class="mock-budget">
-                <div class="mock-budget-header">
-                  <div class="mock-budget-title">Servicio de diseño y entrega</div>
-                  <div class="mock-budget-num">Válido 15 días</div>
-                </div>
-                <div class="mock-budget-row head">
-                  <span>Descripción</span>
-                  <span style="text-align:right">Cant.</span>
-                  <span style="text-align:right">P. Unit.</span>
-                  <span style="text-align:right">Total</span>
-                </div>
-                <div class="mock-budget-row">
-                  <span>Diseño de piezas</span>
-                  <span>3</span>
-                  <span>$8.500</span>
-                  <span>$25.500</span>
-                </div>
-                <div class="mock-budget-row">
-                  <span>Entrega a domicilio</span>
-                  <span>1</span>
-                  <span>$3.000</span>
-                  <span>$3.000</span>
-                </div>
-                <div class="mock-budget-row">
-                  <span>Urgencia (48hs)</span>
-                  <span>1</span>
-                  <span>$4.000</span>
-                  <span>$4.000</span>
-                </div>
-                <div class="mock-budget-row total">
-                  <span>TOTAL</span>
-                  <span></span>
-                  <span></span>
-                  <span class="accent">$32.500</span>
-                </div>
-                <div class="mock-pdf-btn">
-                  <div class="mock-pdf-pill">⬇ Descargar PDF</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="nexo-feature-label">📦 Control de stock en tiempo real</div>
-          <p class="nexo-feature-desc">Cada venta registrada descuenta el stock automáticamente. Cada compra a proveedores lo suma. Vas a estar viendo siempre qué tenés, qué te falta y qué se está por agotar.</p>
-          <div class="app-window">
-            <div class="app-titlebar">
-              <div class="app-dot red"></div>
-              <div class="app-dot yellow"></div>
-              <div class="app-dot green"></div>
-              <div class="app-url">gestionapp.ar/dashboard/stock</div>
-            </div>
-            <div style="padding: 20px;">
-              <div class="mock-header-row">
-                <div class="mock-page-title">Mis productos</div>
-                <div class="mock-btn">+ Agregar</div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; padding: 8px 12px; font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">
-                  <span>Producto</span><span style="text-align:center">Stock</span><span style="text-align:center">Mínimo</span><span style="text-align:right">Precio</span>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: var(--nexo-surface); border: 1px solid var(--nexo-border); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
-                  <span>Gaseosa 2.5L</span>
-                  <span style="text-align:center; color: var(--green); font-weight:700">42 u</span>
-                  <span style="text-align:center; color: var(--muted)">10</span>
-                  <span style="text-align:right; font-weight:600">$890</span>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.2); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
-                  <span>⚠️ Agua mineral</span>
-                  <span style="text-align:center; color: var(--red); font-weight:700">3 u</span>
-                  <span style="text-align:center; color: var(--muted)">15</span>
-                  <span style="text-align:right; font-weight:600">$650</span>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: var(--nexo-surface); border: 1px solid var(--nexo-border); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
-                  <span>Snacks mix</span>
-                  <span style="text-align:center; color: var(--green); font-weight:700">28 u</span>
-                  <span style="text-align:center; color: var(--muted)">8</span>
-                  <span style="text-align:right; font-weight:600">$420</span>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 70px 70px 80px; gap: 8px; background: rgba(248,113,113,0.06); border: 1px solid rgba(248,113,113,0.2); border-radius: 8px; padding: 12px; font-size: 12px; align-items: center;">
-                  <span>⚠️ Jugo botella</span>
-                  <span style="text-align:center; color: var(--red); font-weight:700">2 u</span>
-                  <span style="text-align:center; color: var(--muted)">12</span>
-                  <span style="text-align:right; font-weight:600">$750</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- TESTIMONIALES -->
   <section id="testimoniales">
     <div class="section-inner">
@@ -1458,10 +854,10 @@
           <div class="service-name">Automatización de Procesos</div>
           <p class="service-desc">Reportes, dashboards y flujos que se actualizan solos. Menos trabajo manual, menos errores, más tiempo para lo que importa.</p>
         </div>
-        <div class="service-card fade-in" style="border-color: rgba(20,128,122,0.2); background: linear-gradient(135deg, rgba(20,128,122,0.04), var(--bg2));">
-          <span class="service-icon">🔗</span>
-          <div class="service-name">GestionApp — Sistema para tu pyme</div>
-          <p class="service-desc">Stock, compras, clientes, ventas, presupuestos, cobros, vencimientos y facturación electrónica en un solo sistema. <a href="https://gestionapp.ar" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Conocerlo →</a></p>
+        <div class="service-card fade-in">
+          <span class="service-icon">🔄</span>
+          <div class="service-name">Mejora Continua de Procesos</div>
+          <p class="service-desc">Revisamos tu operación de punta a punta y aplicamos mejoras concretas y sostenidas en el tiempo, no soluciones de una sola vez.</p>
         </div>
         <div class="service-card fade-in">
           <span class="service-icon">💬</span>
@@ -1517,7 +913,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 Gastón Petruzzellis<span>.</span> Todos los derechos reservados.</p>
+    <p>© 2026 PSC Logística<span>.</span> Todos los derechos reservados.</p>
     <p>Hecho con intención<span>.</span></p>
   </footer>
 
