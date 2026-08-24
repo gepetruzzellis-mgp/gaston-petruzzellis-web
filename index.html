@@ -7,668 +7,520 @@
   <meta name="description" content="PSC Logística: consultoría freelance en gestión de inventario, planificación de demanda y mejora continua de procesos para PyMEs y empresas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #faf6f0;
-      --bg2: #f3ece1;
-      --bg3: #ffffff;
-      --border: rgba(31,42,40,0.1);
-      --text: #1f2a28;
-      --muted: #6b6258;
-      --accent: #14807a;
-      --accent2: #0f6259;
-      --accent3: #e2703a;
-      --radius: 16px;
-      --green: #3b8f5c;
-      --red: #c94b3f;
+      --ink: #101f1b;
+      --ink-line: rgba(245,239,225,0.16);
+      --paper: #f5efe1;
+      --paper-line: rgba(16,31,27,0.15);
+      --text: #16241f;
+      --muted: #6c6152;
+      --cream: #f5efe1;
+      --muted-cream: rgba(245,239,225,0.62);
+      --teal: #14807a;
+      --teal-bright: #3fcabb;
+      --amber: #e2703a;
+      --amber-bright: #ff9257;
+      --green: #4f9a6b;
+      --font-display: 'Fraunces', serif;
+      --font-mono: 'IBM Plex Mono', monospace;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
+      background: var(--paper);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
+    em { font-style: italic; }
+
     /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 100;
+      z-index: 200;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 48px;
-      backdrop-filter: blur(20px);
-      background: rgba(250,246,240,0.85);
-      border-bottom: 1px solid var(--border);
+      padding: 18px 48px;
+      background: rgba(245,239,225,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--paper-line);
     }
+    .nav-logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+    .logo-mark { font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 23px; color: var(--ink); letter-spacing: -0.01em; }
+    .logo-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 
-    .nav-logo {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
     .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 400;
+      display: inline-flex;
+      gap: 6px;
+      align-items: baseline;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a .idx { color: var(--amber); font-weight: 600; }
+    .nav-links a:hover { color: var(--ink); }
 
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 9px 20px;
-      border-radius: 100px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(20,128,122,0.25);
-      transition: all 0.2s;
-    }
-    .nav-cta:hover { box-shadow: 0 6px 18px rgba(20,128,122,0.4); transform: translateY(-1px); }
-
-    /* ── SHARED ── */
-    section { padding: 100px 48px; }
-    .section-inner { max-width: 1160px; margin: 0 auto; }
-    .section-label {
+    /* ── BUTTONS ── */
+    .btn {
+      font-family: var(--font-mono);
       font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .section-title {
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .section-sub {
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
-      max-width: 580px;
-    }
-
-    /* ── HERO ── */
-    #hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 48px 80px;
-      max-width: 960px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    #hero::before,
-    #hero::after {
-      content: '';
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      border-radius: 50%;
-      filter: blur(110px);
-      z-index: -1;
-      opacity: 0.35;
-      animation: drift 14s ease-in-out infinite;
-    }
-    #hero::before {
-      top: -120px;
-      left: -140px;
-      background: var(--accent);
-    }
-    #hero::after {
-      bottom: -160px;
-      right: -140px;
-      background: var(--accent3);
-      animation-delay: -7s;
-    }
-    @keyframes drift {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, -20px) scale(1.08); }
-    }
-
-    .hero-content {
-      width: 100%;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-badge {
       display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(20,128,122,0.1);
-      border: 1px solid rgba(20,128,122,0.25);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      margin-bottom: 32px;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    .hero-title {
-      font-size: clamp(42px, 6vw, 76px);
-      font-weight: 800;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-    }
-    .hero-title .highlight {
-      background: linear-gradient(135deg, var(--accent), var(--accent3));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 560px;
-      line-height: 1.75;
-      margin-bottom: 48px;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 14px;
-      padding: 14px 28px;
-      border-radius: 100px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(20,128,122,0.28);
-      transition: all 0.2s;
-    }
-    .btn-primary:hover { box-shadow: 0 10px 28px rgba(20,128,122,0.4); transform: translateY(-2px); }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--text);
-      font-weight: 500;
-      font-size: 14px;
-      padding: 14px 28px;
-      border-radius: 100px;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover { border-color: rgba(31,42,40,0.25); background: rgba(31,42,40,0.04); }
-
-    .hero-stats {
-      display: flex;
-      gap: 48px;
-      margin-top: 72px;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .hero-stat-num {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: -0.03em;
-    }
-    .hero-stats > div:nth-child(2n) .hero-stat-num { color: var(--accent3); }
-    .hero-stat-label {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* ── SOBRE MÍ ── */
-    #sobre-mi { border-top: 1px solid var(--border); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 18px;
-    }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-text strong { color: var(--text); font-weight: 600; }
-
-    .about-panel {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-    }
-    .about-panel-title {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .about-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .about-list li {
-      display: flex;
-      gap: 12px;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text);
-    }
-    .about-list .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-    .about-list li:nth-child(2) .dot { background: var(--accent3); }
-    .about-list li:nth-child(3) .dot { background: var(--green); }
-    .about-list span.muted { color: var(--muted); }
-
-    /* ── CASOS / PORTFOLIO ── */
-    #casos { background: var(--bg2); border-top: 1px solid var(--border); }
-
-    .casos-header {
-      margin-bottom: 60px;
-    }
-
-    .casos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .caso-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px 32px;
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .caso-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .caso-card:hover { border-color: rgba(20,128,122,0.2); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(31,42,40,0.08); }
-    .caso-card:hover::after { opacity: 1; }
-    .caso-card:nth-child(2)::after { background: var(--accent3); }
-    .caso-card:nth-child(2):hover { border-color: rgba(226,112,58,0.25); }
-    .caso-card:nth-child(3)::after { background: var(--green); }
-    .caso-card:nth-child(3):hover { border-color: rgba(59,143,92,0.25); }
-
-    .caso-tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 100px;
-      background: rgba(20,128,122,0.08);
-      color: var(--accent);
-      border: 1px solid rgba(20,128,122,0.2);
-      margin-bottom: 20px;
-    }
-    .caso-card:nth-child(2) .caso-tag { background: rgba(226,112,58,0.08); color: var(--accent3); border-color: rgba(226,112,58,0.25); }
-    .caso-card:nth-child(3) .caso-tag { background: rgba(59,143,92,0.08); color: var(--green); border-color: rgba(59,143,92,0.25); }
-
-    .caso-icon {
-      width: 52px;
-      height: 52px;
-      font-size: 24px;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      background: rgba(20,128,122,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .caso-card:nth-child(2) .caso-icon { background: rgba(226,112,58,0.12); }
-    .caso-card:nth-child(3) .caso-icon { background: rgba(59,143,92,0.12); }
-
-    .caso-empresa {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .caso-title {
-      font-size: 19px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-      line-height: 1.3;
-    }
-
-    .caso-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 28px;
-    }
-
-    .caso-results {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .caso-result {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .caso-result-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(74,222,128,0.12);
-      border: 1px solid rgba(74,222,128,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      flex-shrink: 0;
-    }
-
-    /* ── TESTIMONIALES ── */
-    #testimoniales {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-    }
-
-    .testi-header {
-      text-align: center;
-      max-width: 580px;
-      margin: 0 auto 60px;
-    }
-
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .testi-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: border-color 0.2s;
-      position: relative;
-    }
-    .testi-card:hover { border-color: rgba(20,128,122,0.2); }
-
-    .testi-stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 18px;
-    }
-    .testi-star { color: var(--accent); font-size: 14px; }
-
-    .testi-quote {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--text);
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-    .testi-quote::before { content: '"'; color: var(--accent); font-style: normal; font-size: 20px; line-height: 0; vertical-align: -4px; margin-right: 2px; }
-    .testi-quote::after { content: '"'; color: var(--accent); font-style: normal; font-size: 20px; line-height: 0; vertical-align: -4px; margin-left: 2px; }
-
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .testi-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: 800;
-      color: #ffffff;
-      flex-shrink: 0;
-    }
-    .testi-card:nth-child(2n) .testi-avatar { background: linear-gradient(135deg, var(--accent3), #c65a2b); }
-    .testi-name {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    .testi-role {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .testi-product {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      background: rgba(20,128,122,0.08);
-      border: 1px solid rgba(20,128,122,0.2);
-      border-radius: 100px;
-      padding: 3px 8px;
-    }
-
-    /* ── SERVICIOS ── */
-    #servicios { background: var(--bg); border-top: 1px solid var(--border); }
-
-    .services-header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 60px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: all 0.25s;
-    }
-    .service-card:hover { border-color: rgba(20,128,122,0.25); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(31,42,40,0.08); }
-    .services-grid .service-card:nth-child(3n+2):hover { border-color: rgba(226,112,58,0.3); }
-    .services-grid .service-card:nth-child(3n):hover { border-color: rgba(59,143,92,0.3); }
-
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      font-size: 24px;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      background: rgba(20,128,122,0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .services-grid .service-card:nth-child(3n+2) .service-icon { background: rgba(226,112,58,0.12); }
-    .services-grid .service-card:nth-child(3n) .service-icon { background: rgba(59,143,92,0.12); }
-    .service-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
-    .service-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
-
-    /* ── CONTACTO ── */
-    #contacto {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .contact-inner .section-title { margin-bottom: 16px; }
-    .contact-inner > p {
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 48px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .social-link {
-      display: flex;
       align-items: center;
       gap: 10px;
       padding: 14px 24px;
-      border: 1px solid var(--border);
-      border-radius: 100px;
       text-decoration: none;
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s;
-      background: var(--bg3);
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .social-link:hover {
-      border-color: rgba(20,128,122,0.3);
-      background: rgba(20,128,122,0.06);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-    .social-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary:hover { transform: translate(-3px,-3px); box-shadow: 5px 5px 0 var(--amber); }
+    .btn-secondary { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .btn-secondary:hover { transform: translate(-3px,-3px); box-shadow: 5px 5px 0 var(--ink), inset 0 0 0 1.5px var(--ink); }
+    .btn-invert.btn-primary { background: var(--amber); color: var(--ink); }
+    .btn-invert.btn-primary:hover { box-shadow: 5px 5px 0 var(--cream); }
+    .btn-sm { padding: 10px 18px; font-size: 11px; }
 
-    .contact-email { font-size: 14px; color: var(--muted); }
-    .contact-email a { color: var(--accent); text-decoration: none; }
-    .contact-email a:hover { text-decoration: underline; }
+    /* ── SHARED ── */
+    section { padding: 120px 48px; position: relative; overflow: hidden; }
+    .section-inner { max-width: 1180px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 4px;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+    .eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--teal); display: inline-block; flex-shrink: 0; }
+    .eyebrow .eyebrow-num { color: var(--amber); font-weight: 700; white-space: nowrap; }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.4vw, 54px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      margin-bottom: 18px;
+    }
+    .section-title em { font-weight: 500; color: var(--teal); }
+    .section-sub { color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 600px; }
+
+    .ghost-num {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-style: italic;
+      font-size: clamp(120px, 16vw, 240px);
+      line-height: 1;
+      color: var(--paper-line);
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    section.on-dark { background: var(--ink); color: var(--cream); }
+    section.on-dark .eyebrow { color: var(--muted-cream); }
+    section.on-dark .eyebrow::before { background: var(--teal-bright); }
+    section.on-dark .section-title { color: var(--cream); }
+    section.on-dark .section-title em { color: var(--teal-bright); }
+    section.on-dark .section-sub { color: var(--muted-cream); }
+    section.on-dark .ghost-num { color: var(--ink-line); }
+
+    /* diagonal seams between sections */
+    .seam-l { clip-path: polygon(0 30px, 100% 0, 100% 100%, 0 100%); margin-top: -30px; }
+    .seam-r { clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%); margin-top: -30px; }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--ink);
+      color: var(--muted-cream);
+      overflow: hidden;
+      padding: 15px 0;
+      border-top: 1px solid var(--ink-line);
+      border-bottom: 1px solid var(--ink-line);
+      position: relative;
+      z-index: 2;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 28px;
+      width: max-content;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      animation: ticker-scroll 26s linear infinite;
+    }
+    .ticker-track .sep { color: var(--amber); }
+    @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 150px 48px 90px;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(16,31,27,0.12) 1.2px, transparent 1.4px);
+      background-size: 26px 26px;
+      -webkit-mask-image: linear-gradient(to bottom, black, transparent 88%);
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: -160px; right: -160px;
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: var(--teal);
+      filter: blur(120px);
+      opacity: 0.28;
+      animation: drift 16s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(-24px,26px) scale(1.08); }
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(46px, 6vw, 80px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 26px;
+    }
+    .hero-title em { font-weight: 500; color: var(--teal); }
+
+    .hero-subtitle { font-size: 18px; color: var(--muted); max-width: 520px; line-height: 1.75; margin-bottom: 40px; }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .manifest {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 28px;
+      transform: rotate(2deg);
+      box-shadow: 10px 10px 0 rgba(16,31,27,0.14);
+      position: relative;
+    }
+    .manifest::before {
+      content: '';
+      position: absolute;
+      top: 10px; left: 10px; right: 10px; bottom: 10px;
+      border: 1px dashed var(--ink-line);
+      pointer-events: none;
+    }
+    .manifest-head {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber-bright);
+      padding-bottom: 16px;
+      margin-bottom: 4px;
+      border-bottom: 1px dashed var(--ink-line);
+    }
+    .manifest-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--ink-line);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: var(--muted-cream);
+      text-transform: uppercase;
+    }
+    .manifest-row .val {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--cream);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .manifest-row:last-of-type { border-bottom: none; }
+    .manifest-foot {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+    }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal-bright); animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    /* ── SOBRE MÍ ── */
+    .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: start; }
+    .about-text p { color: var(--muted-cream); font-size: 16.5px; line-height: 1.85; margin-bottom: 20px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--cream); font-weight: 700; }
+
+    .ledger { border-top: 1px solid var(--ink-line); }
+    .ledger-item { padding: 22px 0; border-bottom: 1px solid var(--ink-line); display: flex; gap: 18px; }
+    .ledger-num { font-family: var(--font-mono); color: var(--amber-bright); font-size: 13px; padding-top: 3px; flex-shrink: 0; }
+    .ledger-item strong { color: var(--cream); display: block; margin-bottom: 4px; font-size: 15px; }
+    .ledger-item .muted { color: var(--muted-cream); font-size: 14px; line-height: 1.6; }
+
+    /* ── CASOS ── */
+    .casos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 20px; }
+
+    .caso-card {
+      background: var(--paper);
+      border: 1px solid var(--paper-line);
+      padding: 40px 32px 34px;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .caso-card::before, .caso-card::after { content: ''; position: absolute; width: 16px; height: 16px; z-index: 2; }
+    .caso-card::before { top: 10px; left: 10px; border-top: 2px solid var(--teal); border-left: 2px solid var(--teal); }
+    .caso-card::after { bottom: 10px; right: 10px; border-bottom: 2px solid var(--teal); border-right: 2px solid var(--teal); }
+    .caso-card:nth-child(2)::before, .caso-card:nth-child(2)::after { border-color: var(--amber); }
+    .caso-card:nth-child(3)::before, .caso-card:nth-child(3)::after { border-color: var(--green); }
+    .caso-card:hover { transform: translate(-5px,-5px); box-shadow: 8px 8px 0 var(--teal); }
+    .caso-card:nth-child(2):hover { box-shadow: 8px 8px 0 var(--amber); }
+    .caso-card:nth-child(3):hover { box-shadow: 8px 8px 0 var(--green); }
+
+    .caso-ghost {
+      position: absolute;
+      top: 2px; right: 18px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-style: italic;
+      font-size: 68px;
+      color: var(--paper-line);
+      z-index: 0;
+    }
+
+    .caso-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      background: var(--ink);
+      color: var(--paper);
+      transform: rotate(-1deg);
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .caso-card:nth-child(2) .caso-tag { background: var(--amber); color: var(--ink); }
+    .caso-card:nth-child(3) .caso-tag { background: var(--green); color: var(--ink); }
+
+    .caso-empresa { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; position: relative; z-index: 1; }
+    .caso-title { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 16px; line-height: 1.3; position: relative; z-index: 1; }
+    .caso-desc { font-size: 14.5px; color: var(--muted); line-height: 1.75; margin-bottom: 22px; position: relative; z-index: 1; }
+
+    .caso-results { display: flex; flex-direction: column; gap: 10px; border-top: 1px dashed var(--paper-line); padding-top: 18px; position: relative; z-index: 1; }
+    .caso-result { display: flex; gap: 10px; font-size: 13px; font-weight: 600; align-items: baseline; }
+    .caso-result::before { content: '→'; color: var(--teal); font-family: var(--font-mono); flex-shrink: 0; }
+    .caso-card:nth-child(2) .caso-result::before { color: var(--amber); }
+    .caso-card:nth-child(3) .caso-result::before { color: var(--green); }
+
+    /* ── TESTIMONIALES ── */
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 420px)); justify-content: center; gap: 40px; margin-top: 24px; }
+
+    .testi-card {
+      background: var(--paper);
+      color: var(--text);
+      padding: 32px 28px;
+      position: relative;
+      transform: rotate(-1.4deg);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.28);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .testi-card:nth-child(2n) { transform: rotate(1.4deg); }
+    .testi-card:hover { transform: rotate(0) translateY(-4px); box-shadow: 10px 10px 0 var(--amber-bright); }
+
+    .testi-product {
+      position: absolute;
+      top: -13px; right: 20px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--teal);
+      color: var(--cream);
+      padding: 5px 10px;
+    }
+
+    .testi-stars { font-family: var(--font-mono); letter-spacing: 2px; color: var(--amber); margin-bottom: 16px; font-size: 14px; }
+    .testi-quote { font-family: var(--font-display); font-size: 17px; font-style: italic; font-weight: 400; line-height: 1.6; color: var(--text); margin-bottom: 26px; }
+
+    .testi-author { display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px dashed var(--paper-line); }
+    .testi-avatar {
+      width: 38px; height: 38px;
+      background: var(--ink);
+      color: var(--paper);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .testi-card:nth-child(2n) .testi-avatar { background: var(--amber); }
+    .testi-name { font-weight: 700; font-size: 14px; }
+    .testi-role { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* ── SERVICIOS ── */
+    .services-list { border-top: 1px solid var(--paper-line); margin-top: 30px; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 1.4fr;
+      gap: 32px;
+      align-items: center;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--paper-line);
+      position: relative;
+      transition: padding-left 0.25s ease;
+    }
+    .service-row::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--teal); transition: width 0.25s ease; }
+    .service-row:nth-child(3n+2)::before { background: var(--amber); }
+    .service-row:nth-child(3n)::before { background: var(--green); }
+    .service-row:hover { padding-left: 20px; }
+    .service-row:hover::before { width: 4px; }
+    .service-idx { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 34px; color: var(--paper-line); transition: color 0.25s ease; }
+    .service-row:hover .service-idx { color: var(--teal); }
+    .service-row:nth-child(3n+2):hover .service-idx { color: var(--amber); }
+    .service-row:nth-child(3n):hover .service-idx { color: var(--green); }
+    .service-name { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+    .service-desc { font-size: 14.5px; color: var(--muted); line-height: 1.7; }
+
+    /* ── CONTACTO ── */
+    #contacto { text-align: center; }
+    .contact-inner { max-width: 760px; margin: 0 auto; }
+    .contact-inner .section-title { font-size: clamp(40px, 6vw, 68px); margin: 0 auto 20px; }
+    .contact-inner .eyebrow { justify-content: center; }
+    .contact-inner > p { color: var(--muted-cream); font-size: 18px; margin-bottom: 36px; }
+
+    .route { max-width: 480px; margin: 0 auto 40px; }
+    .route svg { width: 100%; height: auto; display: block; }
+
+    .social-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 22px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--cream);
+      box-shadow: inset 0 0 0 1px var(--ink-line);
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+      transition: all 0.2s ease;
+    }
+    .social-link:hover { box-shadow: inset 0 0 0 1px var(--teal-bright), 4px 4px 0 var(--teal-bright); color: var(--teal-bright); transform: translate(-2px,-2px); }
+    .social-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    .contact-email { font-family: var(--font-mono); font-size: 13px; color: var(--muted-cream); }
+    .contact-email a { color: var(--teal-bright); text-decoration: none; border-bottom: 1px dashed var(--teal-bright); }
 
     /* ── FOOTER ── */
     footer {
-      padding: 32px 48px;
-      border-top: 1px solid var(--border);
+      background: var(--ink);
+      color: var(--muted-cream);
+      padding: 36px 48px;
+      border-top: 1px solid var(--ink-line);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.03em;
     }
-    footer p { font-size: 13px; color: var(--muted); }
-    footer span { color: var(--accent); }
+    footer .stamp { color: var(--amber-bright); font-weight: 700; }
 
     /* ── FADE IN ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
+    .casos-grid .fade-in:nth-child(1) { transition-delay: 0s; }
+    .casos-grid .fade-in:nth-child(2) { transition-delay: 0.12s; }
+    .casos-grid .fade-in:nth-child(3) { transition-delay: 0.24s; }
+    .testi-grid .fade-in:nth-child(1) { transition-delay: 0s; }
+    .testi-grid .fade-in:nth-child(2) { transition-delay: 0.12s; }
+    .services-list .fade-in:nth-child(1) { transition-delay: 0s; }
+    .services-list .fade-in:nth-child(2) { transition-delay: 0.08s; }
+    .services-list .fade-in:nth-child(3) { transition-delay: 0.16s; }
+    .services-list .fade-in:nth-child(4) { transition-delay: 0.24s; }
+    .services-list .fade-in:nth-child(5) { transition-delay: 0.32s; }
+    .services-list .fade-in:nth-child(6) { transition-delay: 0.4s; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      nav { padding: 18px 24px; }
+      nav { padding: 16px 24px; }
       .nav-links { display: none; }
-      section { padding: 70px 24px; }
+      section { padding: 80px 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .manifest { transform: rotate(0); max-width: 440px; margin: 0 auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .casos-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 32px; }
       .testi-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .ghost-num, .caso-ghost { display: none; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 24px; }
     }
 
-    @media (max-width: 600px) {
-      .hero-cta { flex-direction: column; }
-      .btn-primary, .btn-secondary { justify-content: center; }
-      .services-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 28px; }
+    @media (max-width: 700px) {
+      .service-row { grid-template-columns: 50px 1fr; }
+      .service-desc { grid-column: 1 / -1; margin-top: 8px; }
+      .hero-cta { flex-direction: column; align-items: flex-start; }
       .nav-cta { display: none; }
     }
   </style>
@@ -677,59 +529,61 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#hero">PSC<span>.</span></a>
+    <a class="nav-logo" href="#hero">
+      <span class="logo-mark">PSC</span>
+      <span class="logo-tag">Logística</span>
+    </a>
     <ul class="nav-links">
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#casos">Casos</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#testimoniales">Reviews</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#sobre-mi"><span class="idx">01</span>Sobre mí</a></li>
+      <li><a href="#casos"><span class="idx">02</span>Casos</a></li>
+      <li><a href="#servicios"><span class="idx">03</span>Servicios</a></li>
+      <li><a href="#testimoniales"><span class="idx">04</span>Reviews</a></li>
+      <li><a href="#contacto"><span class="idx">05</span>Contacto</a></li>
     </ul>
-    <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="nav-cta">Hablemos →</a>
+    <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Hablemos →</a>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-content">
-      <div class="hero-badge">Disponible para proyectos</div>
-      <h1 class="hero-title">
-        Stock, procesos<br />y <span class="highlight">resultados reales</span>
-      </h1>
-      <p class="hero-subtitle">
-        Soy PSC Logística. Ayudo a PyMEs y empresas a ordenar su gestión de inventario, planificar mejor sus compras y mejorar sus procesos de forma continua — con soluciones concretas, no con teoría.
-      </p>
-      <div class="hero-cta">
-        <a href="#casos" class="btn-primary">Ver casos de impacto →</a>
-        <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="btn-secondary">Hablar por WhatsApp</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-num">N.° 001</span> — Consultoría de Operaciones</div>
+        <h1 class="hero-title">Stock, procesos<br />y <em>resultados reales</em></h1>
+        <p class="hero-subtitle">
+          Soy PSC Logística. Ayudo a PyMEs y empresas a ordenar su gestión de inventario, planificar mejor sus compras y mejorar sus procesos de forma continua — con soluciones concretas, no con teoría.
+        </p>
+        <div class="hero-cta">
+          <a href="#casos" class="btn btn-primary">Ver casos de impacto →</a>
+          <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="btn btn-secondary">Hablar por WhatsApp</a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">+5</div>
-          <div class="hero-stat-label">años en logística y supply chain</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">+30</div>
-          <div class="hero-stat-label">negocios asesorados</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">68%</div>
-          <div class="hero-stat-label">menos quiebres de stock en clientes</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">3</div>
-          <div class="hero-stat-label">rubros distintos con casos de éxito</div>
-        </div>
+      <div class="manifest">
+        <div class="manifest-head"><span>Manifiesto</span><span>OP-2026</span></div>
+        <div class="manifest-row"><span>Años en logística</span><span class="val">+5</span></div>
+        <div class="manifest-row"><span>Negocios asesorados</span><span class="val">+30</span></div>
+        <div class="manifest-row"><span>Menos quiebres de stock</span><span class="val">68%</span></div>
+        <div class="manifest-row"><span>Rubros con casos de éxito</span><span class="val">3</span></div>
+        <div class="manifest-foot"><span class="status-dot"></span> Disponible para proyectos</div>
       </div>
     </div>
   </section>
 
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Stock</span><span class="sep">·</span><span>Planificación</span><span class="sep">·</span><span>Procesos</span><span class="sep">·</span><span>Logística</span><span class="sep">·</span><span>Inventario</span><span class="sep">·</span>
+      <span>Stock</span><span class="sep">·</span><span>Planificación</span><span class="sep">·</span><span>Procesos</span><span class="sep">·</span><span>Logística</span><span class="sep">·</span><span>Inventario</span><span class="sep">·</span>
+    </div>
+  </div>
+
   <!-- SOBRE MÍ -->
-  <section id="sobre-mi">
+  <section id="sobre-mi" class="on-dark seam-r">
+    <div class="ghost-num">02</div>
     <div class="section-inner">
       <div class="about-grid">
         <div class="about-text fade-in">
-          <div class="section-label">Sobre mí</div>
-          <h2 class="section-title">Vengo de la logística,<br />no de la teoría</h2>
+          <div class="eyebrow"><span class="eyebrow-num">N.° 002</span> — Sobre mí</div>
+          <h2 class="section-title">Vengo de la logística,<br /><em>no de la teoría</em></h2>
           <p>
             <strong>PSC Logística</strong> es la consultora freelance que fundé después de varios años trabajando en logística y supply chain. Ayudo a PyMEs y empresas a ordenar su gestión de inventario, planificar mejor sus compras y mejorar sus procesos del día a día.
           </p>
@@ -740,32 +594,45 @@
             Hoy trabajo 1 a 1 con cada cliente: diagnóstico concreto, solución a medida y resultados medibles. Sin vueltas.
           </p>
         </div>
-        <div class="about-panel fade-in">
-          <div class="about-panel-title">En qué te puedo ayudar</div>
-          <ul class="about-list">
-            <li><span class="dot"></span><span><strong>Gestión de stock e inventario</strong> — <span class="muted">saber en todo momento qué tenés, qué te falta y qué se está agotando.</span></span></li>
-            <li><span class="dot"></span><span><strong>Planeamiento de compras y demanda</strong> — <span class="muted">comprar según lo que realmente se vende, no según intuición.</span></span></li>
-            <li><span class="dot"></span><span><strong>Mejora continua de procesos</strong> — <span class="muted">ordenar el flujo diario de tu operación de punta a punta.</span></span></li>
-            <li><span class="dot"></span><span><strong>Logística & supply chain</strong> — <span class="muted">rutas, distribución y costos operativos bajo control.</span></span></li>
-          </ul>
+        <div class="fade-in">
+          <div class="eyebrow" style="margin-bottom:6px;">En qué te puedo ayudar</div>
+          <div class="ledger">
+            <div class="ledger-item">
+              <span class="ledger-num">01</span>
+              <span><strong>Gestión de stock e inventario</strong><span class="muted">Saber en todo momento qué tenés, qué te falta y qué se está agotando.</span></span>
+            </div>
+            <div class="ledger-item">
+              <span class="ledger-num">02</span>
+              <span><strong>Planeamiento de compras y demanda</strong><span class="muted">Comprar según lo que realmente se vende, no según intuición.</span></span>
+            </div>
+            <div class="ledger-item">
+              <span class="ledger-num">03</span>
+              <span><strong>Mejora continua de procesos</strong><span class="muted">Ordenar el flujo diario de tu operación de punta a punta.</span></span>
+            </div>
+            <div class="ledger-item">
+              <span class="ledger-num">04</span>
+              <span><strong>Logística & supply chain</strong><span class="muted">Rutas, distribución y costos operativos bajo control.</span></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CASOS DE IMPACTO -->
-  <section id="casos">
+  <section id="casos" class="seam-l">
+    <div class="ghost-num">03</div>
     <div class="section-inner">
       <div class="casos-header fade-in">
-        <div class="section-label">Portfolio</div>
-        <h2 class="section-title">Casos de impacto real</h2>
+        <div class="eyebrow"><span class="eyebrow-num">N.° 003</span> — Portfolio</div>
+        <h2 class="section-title">Casos de <em>impacto real</em></h2>
         <p class="section-sub">Problemas concretos, soluciones específicas, resultados medibles.</p>
       </div>
 
       <div class="casos-grid">
 
         <div class="caso-card fade-in">
-          <span class="caso-icon">🔩</span>
+          <span class="caso-ghost">01</span>
           <span class="caso-tag">Gestión de Inventario</span>
           <div class="caso-empresa">Ferretería — Córdoba</div>
           <div class="caso-title">De 0 a control total del stock en 3 semanas</div>
@@ -776,23 +643,14 @@
             Implementamos un sistema de control de inventario en Google Sheets con categorías, stock mínimo configurable y reportes automáticos semanales.
           </p>
           <div class="caso-results">
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Quiebres de stock reducidos un 68%
-            </div>
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Tiempo de conteo semanal: de 4 hs a 45 min
-            </div>
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Pedidos a proveedores basados en datos reales
-            </div>
+            <div class="caso-result">Quiebres de stock reducidos un 68%</div>
+            <div class="caso-result">Tiempo de conteo semanal: de 4 hs a 45 min</div>
+            <div class="caso-result">Pedidos a proveedores basados en datos reales</div>
           </div>
         </div>
 
         <div class="caso-card fade-in">
-          <span class="caso-icon">👗</span>
+          <span class="caso-ghost">02</span>
           <span class="caso-tag">Planeamiento de Demanda</span>
           <div class="caso-empresa">Emprendimiento textil — Buenos Aires</div>
           <div class="caso-title">Comprar lo que se vende, no lo que parece que se vende</div>
@@ -803,23 +661,14 @@
             Analizamos 18 meses de ventas históricas y construimos un modelo simple de planeamiento por talla, color y temporada con proyección de demanda.
           </p>
           <div class="caso-results">
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Inversión en compras reducida un 22%
-            </div>
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Stock sin rotar al final de temporada: -70%
-            </div>
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Margen bruto mejorado 14 puntos porcentuales
-            </div>
+            <div class="caso-result">Inversión en compras reducida un 22%</div>
+            <div class="caso-result">Stock sin rotar al final de temporada: -70%</div>
+            <div class="caso-result">Margen bruto mejorado 14 puntos porcentuales</div>
           </div>
         </div>
 
         <div class="caso-card fade-in">
-          <span class="caso-icon">🚚</span>
+          <span class="caso-ghost">03</span>
           <span class="caso-tag">Logística & Procesos</span>
           <div class="caso-empresa">Distribuidora de alimentos — GBA</div>
           <div class="caso-title">Rutas optimizadas y entregas sin errores</div>
@@ -830,18 +679,9 @@
             Reorganizamos el flujo de pedidos, implementamos un tablero digital de rutas por zona y automatizamos los remitos y el cierre de caja diario.
           </p>
           <div class="caso-results">
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Tiempo de armado de rutas: de 2 hs a 20 min
-            </div>
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Errores en pedidos: casi cero
-            </div>
-            <div class="caso-result">
-              <div class="caso-result-icon">✓</div>
-              Cierre de caja diario automatizado
-            </div>
+            <div class="caso-result">Tiempo de armado de rutas: de 2 hs a 20 min</div>
+            <div class="caso-result">Errores en pedidos: casi cero</div>
+            <div class="caso-result">Cierre de caja diario automatizado</div>
           </div>
         </div>
 
@@ -850,22 +690,21 @@
   </section>
 
   <!-- TESTIMONIALES -->
-  <section id="testimoniales">
+  <section id="testimoniales" class="on-dark seam-r">
+    <div class="ghost-num">04</div>
     <div class="section-inner">
-      <div class="testi-header fade-in">
-        <div class="section-label">Lo que dicen</div>
-        <h2 class="section-title">Resultados que hablan solos</h2>
-        <p class="section-sub" style="margin: 0 auto;">Personas reales que trabajaron conmigo en consultoría.</p>
+      <div class="testi-header fade-in" style="text-align:center; max-width:580px; margin:0 auto 20px;">
+        <div class="eyebrow" style="justify-content:center;"><span class="eyebrow-num">N.° 004</span> — Lo que dicen</div>
+        <h2 class="section-title">Resultados que <em>hablan solos</em></h2>
+        <p class="section-sub" style="margin:0 auto;">Personas reales que trabajaron conmigo en consultoría.</p>
       </div>
 
       <div class="testi-grid">
 
         <div class="testi-card fade-in">
           <div class="testi-product">Consultoría</div>
-          <div class="testi-stars">
-            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
-          </div>
-          <p class="testi-quote">En menos de un mes ordenamos el inventario de toda la ferretería. Gastón entiende rápido cómo funciona el negocio y propone soluciones que realmente se pueden implementar.</p>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"En menos de un mes ordenamos el inventario de toda la ferretería. Gastón entiende rápido cómo funciona el negocio y propone soluciones que realmente se pueden implementar."</p>
           <div class="testi-author">
             <div class="testi-avatar">FP</div>
             <div>
@@ -877,10 +716,8 @@
 
         <div class="testi-card fade-in">
           <div class="testi-product">Consultoría</div>
-          <div class="testi-stars">
-            <span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span><span class="testi-star">★</span>
-          </div>
-          <p class="testi-quote">El análisis de demanda que hicimos cambió cómo compro cada temporada. Dejé de gastar en lo que no se vende y ahora tengo stock justo de lo que sí se vende.</p>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"El análisis de demanda que hicimos cambió cómo compro cada temporada. Dejé de gastar en lo que no se vende y ahora tengo stock justo de lo que sí se vende."</p>
           <div class="testi-author">
             <div class="testi-avatar">AG</div>
             <div>
@@ -895,41 +732,42 @@
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios">
+  <section id="servicios" class="seam-l">
+    <div class="ghost-num">05</div>
     <div class="section-inner">
       <div class="services-header fade-in">
-        <div class="section-label">Servicios</div>
-        <h2 class="section-title">¿En qué puedo ayudarte?</h2>
-        <p style="color: var(--muted); font-size: 17px;">Consultoría en logística, stock e inventario, y sistemas de gestión para PyMEs y empresas.</p>
+        <div class="eyebrow"><span class="eyebrow-num">N.° 005</span> — Servicios</div>
+        <h2 class="section-title">¿En qué puedo <em>ayudarte?</em></h2>
+        <p class="section-sub">Consultoría en logística, stock e inventario, y sistemas de gestión para PyMEs y empresas.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <span class="service-icon">🗃️</span>
+      <div class="services-list">
+        <div class="service-row fade-in">
+          <div class="service-idx">01</div>
           <div class="service-name">Control de Inventario</div>
           <p class="service-desc">Sistemas de control de stock adaptados a tu negocio. Sabés en todo momento qué tenés, qué te falta y qué se está moviendo.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="service-icon">📊</span>
+        <div class="service-row fade-in">
+          <div class="service-idx">02</div>
           <div class="service-name">Planeamiento de Demanda</div>
           <p class="service-desc">Análisis de ventas históricas para proyectar qué, cuánto y cuándo comprar. Menos stock parado, menos quiebres, más rentabilidad.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="service-icon">📦</span>
+        <div class="service-row fade-in">
+          <div class="service-idx">03</div>
           <div class="service-name">Logística & Supply Chain</div>
           <p class="service-desc">Optimización de flujos operativos, reducción de costos logísticos y diseño de procesos de punta a punta para PyMEs y medianas empresas.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="service-icon">⚙️</span>
+        <div class="service-row fade-in">
+          <div class="service-idx">04</div>
           <div class="service-name">Automatización de Procesos</div>
           <p class="service-desc">Reportes, dashboards y flujos que se actualizan solos. Menos trabajo manual, menos errores, más tiempo para lo que importa.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="service-icon">🔄</span>
+        <div class="service-row fade-in">
+          <div class="service-idx">05</div>
           <div class="service-name">Mejora Continua de Procesos</div>
           <p class="service-desc">Revisamos tu operación de punta a punta y aplicamos mejoras concretas y sostenidas en el tiempo, no soluciones de una sola vez.</p>
         </div>
-        <div class="service-card fade-in">
-          <span class="service-icon">💬</span>
+        <div class="service-row fade-in">
+          <div class="service-idx">06</div>
           <div class="service-name">Consulta personalizada</div>
           <p class="service-desc">¿No sabés por dónde empezar? Hablamos 30 minutos y te digo concretamente qué mejorar en tu negocio y cómo. Sin vueltas.</p>
         </div>
@@ -938,52 +776,65 @@
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="contact-inner fade-in">
-      <div class="section-label">Contacto</div>
-      <h2 class="section-title">¿Hablamos?</h2>
-      <p>Escribime por WhatsApp o seguime en redes. Siempre estoy abierto a nuevos proyectos.</p>
+  <section id="contacto" class="on-dark seam-r">
+    <div class="ghost-num">06</div>
+    <div class="section-inner">
+      <div class="contact-inner fade-in">
+        <div class="eyebrow"><span class="eyebrow-num">N.° 006</span> — Contacto</div>
+        <h2 class="section-title">¿Hablamos?</h2>
+        <p>Escribime por WhatsApp o seguime en redes. Siempre estoy abierto a nuevos proyectos.</p>
 
-      <div class="social-links">
-        <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+        <div class="route">
+          <svg viewBox="0 0 480 30" aria-hidden="true">
+            <line x1="10" y1="15" x2="470" y2="15" stroke="rgba(245,239,225,0.16)" stroke-width="2"/>
+            <line x1="10" y1="15" x2="470" y2="15" stroke="#3fcabb" stroke-width="2" stroke-dasharray="8 10"/>
+            <circle r="6" fill="#ff9257">
+              <animateMotion dur="3.2s" repeatCount="indefinite" path="M10,15 H470" />
+            </circle>
           </svg>
-          WhatsApp
-        </a>
-        <a href="https://www.instagram.com/petruzzellis_logistica" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-          Instagram
-        </a>
-        <a href="https://www.tiktok.com/@petruzzellis_logistica" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.35 6.35 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.78 1.52V7.12a4.85 4.85 0 0 1-1.01-.43z"/>
-          </svg>
-          TikTok
-        </a>
-        <a href="https://www.linkedin.com/in/gaston-petruzzellis" target="_blank" rel="noopener" class="social-link">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
-          LinkedIn
-        </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://wa.me/541138273942" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+          <a href="https://www.instagram.com/petruzzellis_logistica" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@petruzzellis_logistica" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.35 6.35 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.78 1.52V7.12a4.85 4.85 0 0 1-1.01-.43z"/>
+            </svg>
+            TikTok
+          </a>
+          <a href="https://www.linkedin.com/in/gaston-petruzzellis" target="_blank" rel="noopener" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <p class="contact-email">
+          O escribime a <a href="mailto:gepetruzzellis@gmail.com">gepetruzzellis@gmail.com</a>
+        </p>
       </div>
-
-      <p class="contact-email">
-        O escribime a <a href="mailto:gepetruzzellis@gmail.com">gepetruzzellis@gmail.com</a>
-      </p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 PSC Logística<span>.</span> Todos los derechos reservados.</p>
-    <p>Hecho con intención<span>.</span></p>
+    <p>© 2026 <span class="stamp">PSC</span> Logística — Todos los derechos reservados.</p>
+    <p>Hecho con intención<span class="stamp">.</span></p>
   </footer>
 
   <script>
