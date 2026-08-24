@@ -35,6 +35,7 @@
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     /* ── NAV ── */
@@ -78,16 +79,17 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #ffffff;
       font-weight: 600;
       font-size: 13px;
       padding: 9px 20px;
       border-radius: 100px;
       text-decoration: none;
+      box-shadow: 0 4px 14px rgba(20,128,122,0.25);
       transition: all 0.2s;
     }
-    .nav-cta:hover { background: var(--accent2); }
+    .nav-cta:hover { box-shadow: 0 6px 18px rgba(20,128,122,0.4); transform: translateY(-1px); }
 
     /* ── SHARED ── */
     section { padding: 100px 48px; }
@@ -116,6 +118,7 @@
 
     /* ── HERO ── */
     #hero {
+      position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -123,6 +126,34 @@
       padding: 120px 48px 80px;
       max-width: 960px;
       margin: 0 auto;
+      overflow: hidden;
+    }
+    #hero::before,
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      filter: blur(110px);
+      z-index: -1;
+      opacity: 0.35;
+      animation: drift 14s ease-in-out infinite;
+    }
+    #hero::before {
+      top: -120px;
+      left: -140px;
+      background: var(--accent);
+    }
+    #hero::after {
+      bottom: -160px;
+      right: -140px;
+      background: var(--accent3);
+      animation-delay: -7s;
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.08); }
     }
 
     .hero-content {
@@ -167,7 +198,12 @@
       letter-spacing: -0.03em;
       margin-bottom: 24px;
     }
-    .hero-title .highlight { color: var(--accent); }
+    .hero-title .highlight {
+      background: linear-gradient(135deg, var(--accent), var(--accent3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
     .hero-subtitle {
       font-size: 18px;
@@ -188,16 +224,17 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #ffffff;
       font-weight: 600;
       font-size: 14px;
       padding: 14px 28px;
       border-radius: 100px;
       text-decoration: none;
+      box-shadow: 0 8px 24px rgba(20,128,122,0.28);
       transition: all 0.2s;
     }
-    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+    .btn-primary:hover { box-shadow: 0 10px 28px rgba(20,128,122,0.4); transform: translateY(-2px); }
 
     .btn-secondary {
       display: inline-flex;
@@ -230,6 +267,7 @@
       color: var(--accent);
       letter-spacing: -0.03em;
     }
+    .hero-stats > div:nth-child(2n) .hero-stat-num { color: var(--accent3); }
     .hero-stat-label {
       font-size: 13px;
       color: var(--muted);
@@ -289,6 +327,8 @@
       flex-shrink: 0;
       margin-top: 6px;
     }
+    .about-list li:nth-child(2) .dot { background: var(--accent3); }
+    .about-list li:nth-child(3) .dot { background: var(--green); }
     .about-list span.muted { color: var(--muted); }
 
     /* ── CASOS / PORTFOLIO ── */
@@ -322,8 +362,12 @@
       opacity: 0;
       transition: opacity 0.2s;
     }
-    .caso-card:hover { border-color: rgba(20,128,122,0.2); transform: translateY(-4px); }
+    .caso-card:hover { border-color: rgba(20,128,122,0.2); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(31,42,40,0.08); }
     .caso-card:hover::after { opacity: 1; }
+    .caso-card:nth-child(2)::after { background: var(--accent3); }
+    .caso-card:nth-child(2):hover { border-color: rgba(226,112,58,0.25); }
+    .caso-card:nth-child(3)::after { background: var(--green); }
+    .caso-card:nth-child(3):hover { border-color: rgba(59,143,92,0.25); }
 
     .caso-tag {
       display: inline-block;
@@ -338,12 +382,22 @@
       border: 1px solid rgba(20,128,122,0.2);
       margin-bottom: 20px;
     }
+    .caso-card:nth-child(2) .caso-tag { background: rgba(226,112,58,0.08); color: var(--accent3); border-color: rgba(226,112,58,0.25); }
+    .caso-card:nth-child(3) .caso-tag { background: rgba(59,143,92,0.08); color: var(--green); border-color: rgba(59,143,92,0.25); }
 
     .caso-icon {
-      font-size: 28px;
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
       margin-bottom: 16px;
-      display: block;
+      border-radius: 14px;
+      background: rgba(20,128,122,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    .caso-card:nth-child(2) .caso-icon { background: rgba(226,112,58,0.12); }
+    .caso-card:nth-child(3) .caso-icon { background: rgba(59,143,92,0.12); }
 
     .caso-empresa {
       font-size: 11px;
@@ -460,6 +514,7 @@
       color: #ffffff;
       flex-shrink: 0;
     }
+    .testi-card:nth-child(2n) .testi-avatar { background: linear-gradient(135deg, var(--accent3), #c65a2b); }
     .testi-name {
       font-size: 14px;
       font-weight: 600;
@@ -506,9 +561,23 @@
       padding: 32px 28px;
       transition: all 0.25s;
     }
-    .service-card:hover { border-color: rgba(20,128,122,0.25); transform: translateY(-3px); }
+    .service-card:hover { border-color: rgba(20,128,122,0.25); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(31,42,40,0.08); }
+    .services-grid .service-card:nth-child(3n+2):hover { border-color: rgba(226,112,58,0.3); }
+    .services-grid .service-card:nth-child(3n):hover { border-color: rgba(59,143,92,0.3); }
 
-    .service-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: rgba(20,128,122,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .services-grid .service-card:nth-child(3n+2) .service-icon { background: rgba(226,112,58,0.12); }
+    .services-grid .service-card:nth-child(3n) .service-icon { background: rgba(59,143,92,0.12); }
     .service-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
     .service-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
@@ -882,7 +951,7 @@
           </svg>
           WhatsApp
         </a>
-        <a href="https://www.instagram.com/gastonpetruzzellis" target="_blank" rel="noopener" class="social-link">
+        <a href="https://www.instagram.com/petruzzellis_logistica" target="_blank" rel="noopener" class="social-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
             <circle cx="12" cy="12" r="4"/>
@@ -890,7 +959,7 @@
           </svg>
           Instagram
         </a>
-        <a href="https://www.tiktok.com/@gastonpetruzzellis" target="_blank" rel="noopener" class="social-link">
+        <a href="https://www.tiktok.com/@petruzzellis_logistica" target="_blank" rel="noopener" class="social-link">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.35 6.35 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.78 1.52V7.12a4.85 4.85 0 0 1-1.01-.43z"/>
           </svg>
